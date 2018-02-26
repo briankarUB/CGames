@@ -26,19 +26,11 @@ give the option to learn one programming language (Python), additional
 languages could be added to the web app later.
 3. Ability to share a highscore to a social media account.
 
-## Testing
-```
-$ git clone https://github.com/briankarUB/CGames.git
-$ cd CGames
-$ python setup.py validate
-```
-
-## Running
-Follow the above procedure to clone and test the project. Then, modify 
-`config.py` to include your own Google API authentication info, which you
-can get from https://console.cloud.google.com.
-
-Finally, run the project using the following command:
-```
-python -m cgames.run
-```
+## Get started
+1. Obtain your own OAuth 2.0 credentials for the Google API using
+[this guide](https://developers.google.com/identity/protocols/OAuth2).
+2. Clone the project from GitHub.
+3. In the repository directory, open `run.sh` or `run.bat` (depending on your
+operating system) and modify the proper lines near the top of the file to 
+configure your OAuth 2.0 credentials.
+4. Run the server using either `run.sh` or `run.bat`.
