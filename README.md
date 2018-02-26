@@ -4,6 +4,9 @@
 [![Gitter](https://img.shields.io/gitter/room/CGames_CSE442/Lobby.svg)](https://gitter.im/CGames_CSE442/Lobby)  
 CSE 442 project for Spring 2018.
 
+## Prototype link
+https://www.youtube.com/watch?v=gKoA1O_O3Zs
+
 ## Summary
 
 ### User story
