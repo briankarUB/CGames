@@ -13,6 +13,7 @@ export FLASK_APP="cgames/app.py"
 # Create and activate the virtual environment
 python3 -m virtualenv venv
 source venv/bin/activate
+pip3 install -U setuptools
 
 # Install the project into the virtual environment
 python3 setup.py install
