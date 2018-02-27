@@ -6,6 +6,8 @@ python:
 
 script:
   - python setup.py test
-  - python setup.py flake8 || true
+
+after_success:
+  - python setup.py flake8
 
 cache: pip
