@@ -25,3 +25,22 @@ Brian: Solve the issue with profiles
 Ben: Merge to develop
 Cory: Film the prototype
 Matt: implement leaderboard page
+
+February 28, 2018 1-2PM
+Attendance: full attendance
+Things we did this past week:
+As a group, we completed our prototype, with buttons for user sign-in, assignments, and a leaderboard
+Also, we filmed a prototype video, uploaded it to youtube, and updated our readme accordingly 
+Topics Discussed:
+1. Best way to fulfill user story for alpha release
+2. Decided on focusing more on building fun games that teach the user about coding, as opposed to coding assignments
+3. Redefined team roles to reflect the above changes in our project's focus
+4. Implementing cookies or some other way to save user progress (to avoid dealing with google sign-in)
+Tasks for Next Week:
+Sai, Matt: brainstorm game design
+Brian: clean up code and make template for Ben and Cory's assignment
+Ben, Cory: brainstorm/write a first lesson and start adding it to the site
+
+
+
+
