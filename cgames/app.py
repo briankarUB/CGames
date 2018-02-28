@@ -1,21 +1,14 @@
 from flask import Flask, redirect, url_for, render_template, jsonify
 from flask_dance.contrib.google import make_google_blueprint, google
+import os
 
-try:
-    import cgames.config as config
-except Exception as e:
-    import config
 '''
     connecting to google OAuth
     source tutorial: https://pythonspot.com/login-to-flask-app-with-google
 '''
 
-import os
-
-os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'  # FIXME
-
-GOOGLE_CLIENT_ID = config.GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET = config.GOOGLE_CLIENT_SECRET
+GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_OAUTH_CLIENT_ID')
+GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_OAUTH_CLIENT_SECRET')
 REDIRECT_URI = '/oauth2callback'
 SECRET_KEY = 'development key'
 DEBUG = True

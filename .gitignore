@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/linux,macos,python,windows,pycharm+all
+# Created by https://www.gitignore.io/api/linux,macos,python,windows,pycharm
 
 ### Linux ###
 *~
@@ -42,7 +42,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### PyCharm+all ###
+### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -96,11 +96,16 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-### PyCharm+all Patch ###
-# Ignores the whole idea folder
-# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+### PyCharm Patch ###
+# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
-.idea/
+# *.iml
+# modules.xml
+# .idea/misc.xml
+# *.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -224,4 +229,8 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/linux,macos,python,windows,pycharm+all
+# End of https://www.gitignore.io/api/linux,macos,python,windows,pycharm
+
+# Ignore certain run configurations that can contain secret information
+.idea/runConfigurations/Flask__Production_.xml
+.idea/runConfigurations/Flask__Debug_.xml
