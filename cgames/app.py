@@ -1,21 +1,13 @@
-from flask import Flask, redirect, url_for, render_template, jsonify
-from flask_dance.contrib.google import make_google_blueprint, google
 import os
 
-'''
-    connecting to google OAuth
-    source tutorial: https://pythonspot.com/login-to-flask-app-with-google
-'''
+from flask import Flask, jsonify, redirect, render_template, url_for
+from flask_dance.contrib.google import google, make_google_blueprint
 
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_OAUTH_CLIENT_ID')
 GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_OAUTH_CLIENT_SECRET')
-REDIRECT_URI = '/oauth2callback'
-SECRET_KEY = 'development key'
-DEBUG = True
 
 app = Flask(__name__)
-app.debug = DEBUG
-app.secret_key = SECRET_KEY
+app.secret_key = 'development key'
 
 blueprint = make_google_blueprint(
     client_id=GOOGLE_CLIENT_ID,
@@ -24,24 +16,10 @@ blueprint = make_google_blueprint(
 )
 app.register_blueprint(blueprint, url_prefix='/login')
 
-'''
-    the function save is the template for saving the user, a table will have to
-    be set up with the user info and stats
-'''
 
-
-def save(user):
-    print(user)
-
-
-'''
-    this is the homepage; all it does is renders the index.html file
-'''
-
-
-@app.route("/")
+@app.route('/')
 def index():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 '''
@@ -52,17 +30,15 @@ def index():
 '''
 
 
-@app.route('/Assignments')
+@app.route('/assignments')
 def assignments():
     return render_template('assignments.html')
 
 
-@app.route('/Home')
-def signin():
+@app.route('/sign_in')
+def sign_in():
     if not google.authorized:
         return redirect(url_for('google.login'))
-
-    # print(help(google.close))
 
     resp = google.get('/oauth2/v2/userinfo')
     assert resp.ok, resp.text
@@ -73,15 +49,7 @@ def signin():
                            vname=d['name'],
                            photo=d['picture'],
                            email=d['email'],
-                           vid=d['id']
-                           )
-
-
-'''
-
-
-    main runs the app
-'''
+                           vid=d['id'])
 
 
 @app.route('/profile')
@@ -95,19 +63,6 @@ def profile():
     return jsonify(resp.json())
 
 
-@app.route('/Leaderboard')
+@app.route('/leaderboard')
 def leaderboard():
     return render_template('leaderboard.html')
-
-
-"""
-    Leaderboard Page
-"""
-
-
-def main():
-    app.run()
-
-
-if __name__ == '__main__':
-    main()

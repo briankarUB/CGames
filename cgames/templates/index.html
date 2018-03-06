@@ -1,0 +1,54 @@
+{% extends "layout/default.html" %}
+{% block title %}Sign in{% endblock %}
+{% block content %}
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h1 class="header center orange-text">Welcome to CGames</h1>
+            <div class="row center">
+                <h5 class="header col s12 light">A place to learn how to code Python that feels like playing a game</h5>
+            </div>
+            <div class="row center">
+                <a id="download-button" href="{{ url_for('sign_in') }}" class="btn-large waves-effect waves-teal t grey lighten-3 grey-text text-darken-1">Get Started</a>
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                        <h5 class="center">Quick lessons</h5>
+
+                        <p class="light">Lessons are quick paced and fun.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">User Experience Focused</h5>
+
+                        <p class="light">Lessons can be stopped and started at any point.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                        <h5 class="center">Easy to work with</h5>
+
+                        <p class="light">Pick up where you left off with saved lessons</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+{% endblock %}
