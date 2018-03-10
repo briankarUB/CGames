@@ -1,14 +1,6 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
+a.google-signin {
+    width: 191px;
+    height: 46px;
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
+    background: url("../images/google_signin.png") no-repeat;
 }

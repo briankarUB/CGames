@@ -4,13 +4,14 @@
         {% block head %}
             <meta charset="utf-8">
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
             <title>{% block title %}{% endblock %} - CGames</title>
 
-            <!-- Stylesheets -->
-            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+            {# Stylesheets #}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+                  integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous" />
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
 
             <!--[if lt IE 9]>
@@ -20,80 +21,56 @@
     </head>
 
     <body>
-        {% block nav %}
-            <nav class="light-blue lighten-1" role="navigation">
-                <div class="nav-wrapper container">
-                    <a href="{{ url_for('index') }}" class="brand-logo">Home</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        {% block nav_right %}
-                            <li>
-                                <a href="{{ url_for('sign_in') }}">Sign in with Google</a>
-                            </li>
-                        {% endblock %}
-                    </ul>
-                </div>
-            </nav>
-        {% endblock %}
+        {# Top navbar #}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="{{ url_for('index') }}" class="navbar-brand">CGames</a>
 
-        <div id="content">
+                {# Navbar expando for mobile clients #}
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                {# Right-hand navigation #}
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
+                    <form class="form-inline ml-auto">
+                        <a href="{{ url_for('sign_in') }}" class="google-signin">
+                            <span class="sr-only">Sign in with Google</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        {# Main content #}
+        <div class="container mt-3" id="content">
             {% block content %}{% endblock %}
         </div>
 
-        <footer class="page-footer blue darken-1">
-            {% block footer %}
-                <div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <h5 class="white-text">CGames</h5>
-                            <a class="grey-text text-lighten-1" href="https://github.com/briankarUB/CGames">GitHub: CGames</a>
-                        </div>
-                        <div class="col l3 s12">
-                            <h5 class="white-text">Connect</h5>
-                            <ul>
-                                <li>
-                                    <a class="white-text" href="#">Link 1</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 2</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 3</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 4</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col l3 s12">
-                            <h5 class="white-text">Questions?</h5>
-                            <ul>
-                                <li>
-                                    <a class="white-text" href="https://gitter.im/CGames_CSE442/Lobby">Chat with us on Gitter</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 2</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 3</a>
-                                </li>
-                                <li>
-                                    <a class="white-text" href="#">Link 4</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                        Copyright &copy; CGames 2018
-                    </div>
-                </div>
-            {% endblock %}
-        </footer>
+        {# Footer #}
+{#        <footer class="bd-footer text-muted">#}
+{#            <div class="container p-3 p-md-5">#}
+{#                <ul class="bd-footer-links">#}
+{#                    <li><a href="https://github.com/briankarUB/CGames">GitHub</a></li>#}
+{#                    <li><a href="https://gitter.im/CGames_CSE442/Lobby">Gitter</a></li>#}
+{#                    <li><a href="#">Link 3</a></li>#}
+{#                    <li><a href="#">Link 4</a></li>#}
+{#                </ul>#}
+{#                <p>#}
+{#                    Copyright &copy; CGames 2018#}
+{#                </p>#}
+{#            </div>#}
+{#        </footer>#}
 
-        <!-- Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        {# Scripts #}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"
+                integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous"></script>
         <script src="{{ url_for('static', filename='js/init.js') }}"></script>
     </body>
 </html>
