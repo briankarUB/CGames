@@ -54,7 +54,7 @@ def index():
 
 @app.route('/Assignments')
 def assignments():
-    return render_template('assignments.html')
+    return render_template('assignmentsboot.html')
 
 
 @app.route('/Home')

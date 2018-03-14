@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CGames Assignments</title>
+</head>
+
+<body>
+    <h1> This is the CGames Assignment Page!</h1>
+    <p>Here you will learn all about python</p>
+    <h1>Variables and Types</h1>
+    <p>
+        In python, numbers, characters and strings can be stored in variables.
+        Variables in python are assigned by the equal sign '=' x=1, y='abc' z = True
+        Python automagicly assumes type, meaning it knows x is an int, y is a string and z is a boolean
+    </p>
+    <h2>Numbers</h2>
+    <p>
+        Now, what do those types mean?
+        these are default python types that python can operate on; others include float, Decimal...
+        the int type are whole numbers and have the operatiors +(addition) -(subtraction) *(multiplication) /(division)
+        an example:
+    </p>
+    <pre>
+        >>> 2 + 2
+        4
+        >>> 50 - 5*6
+        20
+        >>> (50 - 5*6) / 4
+        5.0
+        >>> 8 / 5  # division always returns a floating point number
+        1.6
+    </pre>
+    <p>
+        The integer numbers (2,4,20) have type int, the ones with a decimal (5.0,1.6) have type float.
+        division always returns a float, to get floor division use the operator // and for remainder %
+    </p>
+    <pre>
+        >>> width = 20
+        >>> height = 5 * 9
+        >>> width * height
+        900
+    </pre>
+    <p>
+        See how variables are used? varialbes can be set to almost any name excluding some python operators
+        like 'for' or 'in'.
+    </p>
+    <h2>Strings</h2>
+    <p>
+        Python can also manipulate strings. Strings are words or sets of characters surrondded by "" or ''
+        Heres and example:
+    </p>
+    <pre>
+        >>> 'spam eggs'  # single quotes
+        'spam eggs'
+        >>> 'doesn\'t'  # use \' to escape the single quote...
+        "doesn't"
+        >>> "doesn't"  # ...or use double quotes instead
+        "doesn't"
+        >>> '"Yes," he said.'
+        '"Yes," he said.'
+        >>> "\"Yes,\" he said."
+        '"Yes," he said.'
+        >>> '"Isn\'t," she said.'
+        '"Isn\'t," she said.'
+    </pre>
+    <p>
+        Strings can be concatonated together with the + operator and repeated with *
+    </p>
+    <pre>
+        >>> 'hi' + ' ' + 'there'
+        hi there
+        >>> 2*'yo'
+        yoyo
+    </pre>
+    <p>
+        Since strings can be looked at as a list of characters, they can be indexed, with the first character having
+        an index of 0. In python there is no type for character, they are just strings with size one.
+    </p>
+    <pre>
+        >>> word = 'Python'
+        >>> word[0]  # character in position 0
+        'P'
+        >>> word[5]  # character in position 5
+        'n'
+    </pre>
+    <p>
+        Indices may also be negative numbers, to start counting from the right:
+    </p>
+    <pre>
+        >>> word[-1]  # last character
+        'n'
+        >>> word[-2]  # second-last character
+        'o'
+        >>> word[-6]
+        'P'
+    </pre>
+    <p>
+        Attempting to use an index that is too large will result in an error:
+    </p>
+    <pre>
+        >>> word[42]  # the word only has 6 characters
+        Traceback (most recent call last):
+        File "stdin", line 1, in module
+        IndexError: string index out of range
+    </pre>
+</body>
+
+</html>
+

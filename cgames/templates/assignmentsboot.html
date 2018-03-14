@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Assignment 1</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/boot/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/boot/css/scrolling-nav.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#types">Types</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#numbers">Numbers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#strings">Strings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-secondary text-white">
+      <div class="container text-center">
+        <h1>Assignment 1</h1>
+        <p class="lead">Learn Python!</p>
+      </div>
+    </header>
+
+    <section id="types">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Variables and Types</h2>
+            <p>
+                Variables in python are assigned by the equal sign '=' x=1, y='abc' z = True
+                Python automagicly assumes type, meaning it knows x is an int, y is a string and z is a boolean
+            </p>
+            <ul>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="numbers" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Numbers</h2>
+            <p>
+                Now, what do those types mean?
+                these are default python types that python can operate on; others include float, Decimal...
+                the int type are whole numbers and have the operatiors +(addition) -(subtraction) *(multiplication) /(division)
+                an example:
+            </p>
+              <p class="bg-white">
+                >>> 2 + 2<br>
+                4<br>
+                >>> 50 - 5*6<br>
+                20<br>
+                >>> (50 - 5*6) / 4<br>
+                5.0<br>
+                >>> 8 / 5  # division always returns a floating point number<br>
+                1.6<br>
+            </p>
+            <p>
+                The integer numbers (2,4,20) have type int, the ones with a decimal (5.0,1.6) have type float.
+                division always returns a float, to get floor division use the operator // and for remainder %
+            </p>
+            <p class="bg-white">
+                >>> width = 20<br>
+                >>> height = 5 * 9<br>
+                >>> width * height<br>
+                900
+            </p>
+            <p>
+                See how variables are used? varialbes can be set to almost any name excluding some python operators
+                like 'for' or 'in'.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strings">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Strings</h2>
+            <p >
+                Python can also manipulate strings. Strings are words or sets of characters surrondded by "" or ''
+                Heres and example:
+            </p>
+            <p class="bg-light">
+                >>> 'spam eggs'  # single quotes<br>
+                'spam eggs'<br>
+                >>> 'doesn\'t'  # use \' to escape the single quote...<br>
+                "doesn't"<br>
+                >>> "doesn't"  # ...or use double quotes instead<br>
+                "doesn't"<br>
+                >>> '"Yes," he said.'<br>
+                '"Yes," he said.'<br>
+                >>> "\"Yes,\" he said."<br>
+                '"Yes," he said.'<br>
+                >>> '"Isn\'t," she said.'<br>
+                '"Isn\'t," she said.'<br>
+            </p>
+            <p>
+                Strings can be concatonated together with the + operator and repeated with *
+            </p>
+            <p class="bg-light">
+                >>> 'hi' + ' ' + 'there'<br>
+                hi there<br>
+                >>> 2*'yo'<br>
+                yoyo<br>
+            </p>
+            <p>
+                Since strings can be looked at as a list of characters, they can be indexed, with the first character having
+                an index of 0. In python there is no type for character, they are just strings with size one.
+            </p>
+            <p class="bg-light">
+                >>> word = 'Python'<br>
+                >>> word[0]  # character in position 0<br>
+                'P'<br>
+                >>> word[5]  # character in position 5<br>
+                'n'<br>
+            </p>
+            <p>
+                Indices may also be negative numbers, to start counting from the right:
+            </p>
+            <p class="bg-light">
+                >>> word[-1]  # last character<br>
+                'n'<br>
+                >>> word[-2]  # second-last character<br>
+                'o'<br>
+                >>> word[-6]<br>
+                'P'<br>
+            </p>
+            <p>
+                Attempting to use an index that is too large will result in an error:
+            </p>
+            <p class="bg-light">
+                >>> word[42]  # the word only has 6 characters<br>
+                Traceback (most recent call last):<br>
+                File "stdin", line 1, in module<br>
+                IndexError: string index out of range<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; CGames 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/boot/vendor/jquery/jquery.min.js"></script>
+    <script src="static/boot/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="static/boot/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="static/boot/js/scrolling-nav.js"></script>
+
+  </body>
+
+</html>

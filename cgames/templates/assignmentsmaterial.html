@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>CGames Assignments</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="static/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="static/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Home</a>
+      <ul class="right hide-on-med-and-down">
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/Assignments">Assignments</a></li>
+          <li class="divider"></li>
+          <li><a href="/logged_in">Switch User</a></li>
+          <li><a href="/">Logout</a></li>
+        </ul>
+        <nav>
+          <div class="nav-wrapper">
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class="dropdown-button blue " href="#!" data-activates="dropdown1">{{ vname }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+          </div>
+        </nav>
+
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/profile">Profile</a></li>
+        <li class="collection-item avatar">
+          <img src="images/yuna.jpg" alt="" class="circle">
+          <span class="title">Title</span>
+          <p>First Line <br>
+            Second Line
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+        <li><a href="/Assignments"> Assignments </a></li>
+        <li class="divider"></li>
+        <li><a href="/login"> Switch User </a></li>
+        <li><a href="/"> Logout </a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+      <div class="row">
+          <div class="col s12 m8">
+            <h1>Assignment 1</h1>
+            <p>Here you will learn all about python</p>
+            <h2>Variables and Types</h2>
+            <p>
+                In python, numbers, characters and strings can be stored in variables.
+                Variables in python are assigned by the equal sign '=' x=1, y='abc' z = True
+                Python automagicly assumes type, meaning it knows x is an int, y is a string and z is a boolean
+            </p>
+            <h3>Numbers</h3>
+            <p>
+                Now, what do those types mean?
+                these are default python types that python can operate on; others include float, Decimal...
+                the int type are whole numbers and have the operatiors +(addition) -(subtraction) *(multiplication) /(division)
+                an example:
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> 2 + 2<br>
+                        4<br>
+                        >>> 50 - 5*6<br>
+                        20<br>
+                        >>> (50 - 5*6) / 4<br>
+                        5.0<br>
+                        >>> 8 / 5  # division always returns a floating point number<br>
+                        1.6<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                The integer numbers (2,4,20) have type int, the ones with a decimal (5.0,1.6) have type float.
+                division always returns a float, to get floor division use the operator // and for remainder %
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> width = 20<br>
+                        >>> height = 5 * 9<br>
+                        >>> width * height<br>
+                        900<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                See how variables are used? varialbes can be set to almost any name excluding some python operators
+                like 'for' or 'in'.
+            </p>
+            <h3>Strings</h3>
+            <p>
+                Python can also manipulate strings. Strings are words or sets of characters surrondded by "" or ''
+                Heres and example:
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> 'spam eggs'  # single quotes<br>
+                        'spam eggs'<br>
+                        >>> 'doesn\'t'  # use \' to escape the single quote...<br>
+                        "doesn't"<br>
+                        >>> "doesn't"  # ...or use double quotes instead<br>
+                        "doesn't"<br>
+                        >>> '"Yes," he said.'<br>
+                        '"Yes," he said.'<br>
+                        >>> "\"Yes,\" he said."<br>
+                        '"Yes," he said.'<br>
+                        >>> '"Isn\'t," she said.'<br>
+                        '"Isn\'t," she said.'<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Strings can be concatonated together with the + operator and repeated with *
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> 'hi' + ' ' + 'there'<br>
+                        hi there<br>
+                        >>> 2*'yo'<br>
+                        yoyo<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Since strings can be looked at as a list of characters, they can be indexed, with the first character having
+                an index of 0. In python there is no type for character, they are just strings with size one.
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> word = 'Python'<br>
+                        >>> word[0]  # character in position 0<br>
+                        'P'<br>
+                        >>> word[5]  # character in position 5<br>
+                        'n'<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Indices may also be negative numbers, to start counting from the right:
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> word[-1]  # last character<br>
+                        'n'<br>
+                        >>> word[-2]  # second-last character<br>
+                        'o'<br>
+                        >>> word[-6]<br>
+                        'P'<br>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Attempting to use an index that is too large will result in an error:
+            </p>
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        >>> word[42]  # the word only has 6 characters<br>
+                        Traceback (most recent call last):<br>
+                        File "stdin", line 1, in module<br>
+                        IndexError: string index out of range<br>
+                    </p>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <footer class="page-footer blue darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">CGames</h5>
+          <li><a class="grey-text text-lighten-1" href="https://github.com/briankarUB/CGames">GitHub: CGames</a></li>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Questions?</h5>
+          <ul>
+            <li><a class="white-text" href="https://gitter.im/CGames_CSE442/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge!">Chat With Us On Gitter</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3">CGames 2018</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
+  </body>
+</html>
