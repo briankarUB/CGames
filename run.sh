@@ -1,11 +1,11 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Don't modify unless you know what you're doing
 export FLASK_APP="cgames/app.py"
 
 # Create and activate the virtual environment
-python3 -m virtualenv venv
-source venv/bin/activate
+python3 -m venv venv
+source ./venv/bin/activate
 pip3 install -U setuptools
 
 # Install the project into the virtual environment
