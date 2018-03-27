@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, abort, render_template
+from jinja2 import TemplateNotFound
 
 app = Flask(__name__)
 app.secret_key = 'development key'
@@ -17,3 +18,13 @@ def assignments():
 @app.route('/leaderboard')
 def leaderboard():
     return render_template('leaderboard.html')
+
+
+@app.route('/assignments/<int:n>')
+def assignment_page(n):
+    filename = 'assignments/{!s}.html'.format(n)
+
+    try:
+        return render_template(filename)
+    except TemplateNotFound:
+        return abort(404)
