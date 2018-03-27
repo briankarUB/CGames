@@ -30,10 +30,11 @@ languages could be added to the web app later.
 3. Ability to share a highscore to a social media account.
 
 ## Get started
-1. Obtain your own OAuth 2.0 credentials for the Google API using
-[this guide](https://developers.google.com/identity/protocols/OAuth2).
-2. Clone the project from GitHub.
-3. In the repository directory, open `run.sh` or `run.bat` (depending on your
-operating system) and modify the proper lines near the top of the file to 
-configure your OAuth 2.0 credentials.
-4. Run the server using either `run.sh` or `run.bat`.
+To jump right into development, clone the project and run either `run.bat` or
+`run.sh`, depending on your operating system. This will perform initial
+installation and start a Flask web server running CGames.
+
+However, we recommend that you use [JetBrains PyCharm](https://www.jetbrains.com/pycharm/)
+when contributing to CGames, as CGames has been built from the ground up using
+PyCharm. Clone the project using PyCharm (as a new project) and everything
+should Just Work.

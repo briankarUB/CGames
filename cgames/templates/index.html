@@ -1,0 +1,48 @@
+{% extends "layout/default.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to CGames</h1>
+        <p class="lead">
+            A place to learn how to code Python that feels like playing a game.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" style="vertical-align: middle">
+                        <i class="material-icons align-middle">flash_on</i>
+                        Quick lessons
+                    </h5>
+                    <p class="card-text">Lessons are quick paced and fun.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="material-icons align-middle">group</i>
+                        User experience focused
+                    </h5>
+                    <p class="card-text">Lessons can be stopped and started at any point.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="material-icons align-middle">settings</i>
+                        Easy to work with
+                    </h5>
+                    <p class="card-text">Pick up where you left off with saved lessons</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

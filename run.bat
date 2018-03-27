@@ -1,12 +1,5 @@
 @echo off
 
-REM Your Google OAuth 2.0 credentials go here
-set GOOGLE_OAUTH_CLIENT_ID=your client id
-set GOOGLE_OAUTH_CLIENT_SECRET=your client secret
-
-REM Required when running the web server without HTTPS support
-set OAUTHLIB_INSECURE_TRANSPORT=1
-
 REM Don't modify unless you know what you're doing
 set FLASK_APP=cgames/app.py
 
