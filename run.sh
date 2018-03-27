@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Your Google OAuth 2.0 credentials go here
 export GOOGLE_OAUTH_CLIENT_ID="488025799093-a0dllov50krc5qejito100q8rtbk1iib"
@@ -11,8 +11,8 @@ export OAUTHLIB_INSECURE_TRANSPORT=1
 export FLASK_APP="cgames/app.py"
 
 # Create and activate the virtual environment
-python3 -m virtualenv venv
-source venv/bin/activate
+python3 -m venv venv
+source ./venv/bin/activate
 pip3 install -U setuptools
 
 # Install the project into the virtual environment
