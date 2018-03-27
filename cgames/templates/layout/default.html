@@ -32,15 +32,6 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                {# Right-hand navigation #}
-                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" id="navbarSupportedContent">
-                    <form class="form-inline ml-auto">
-                        <a href="{{ url_for('sign_in') }}" class="google-signin">
-                            <span class="sr-only">Sign in with Google</span>
-                        </a>
-                    </form>
-                </div>
             </div>
         </nav>
 
@@ -48,21 +39,6 @@
         <div class="container mt-3" id="content">
             {% block content %}{% endblock %}
         </div>
-
-        {# Footer #}
-{#        <footer class="bd-footer text-muted">#}
-{#            <div class="container p-3 p-md-5">#}
-{#                <ul class="bd-footer-links">#}
-{#                    <li><a href="https://github.com/briankarUB/CGames">GitHub</a></li>#}
-{#                    <li><a href="https://gitter.im/CGames_CSE442/Lobby">Gitter</a></li>#}
-{#                    <li><a href="#">Link 3</a></li>#}
-{#                    <li><a href="#">Link 4</a></li>#}
-{#                </ul>#}
-{#                <p>#}
-{#                    Copyright &copy; CGames 2018#}
-{#                </p>#}
-{#            </div>#}
-{#        </footer>#}
 
         {# Scripts #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"
