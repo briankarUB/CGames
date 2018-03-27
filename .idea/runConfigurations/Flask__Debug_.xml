@@ -6,9 +6,6 @@
       <env name="FLASK_APP" value="cgames/app.py" />
       <env name="FLASK_DEBUG" value="1" />
       <env name="PYTHONUNBUFFERED" value="1" />
-      <env name="OAUTHLIB_INSECURE_TRANSPORT" value="1" />
-      <env name="GOOGLE_OAUTH_CLIENT_ID" value="" />
-      <env name="GOOGLE_OAUTH_CLIENT_SECRET" value="" />
     </envs>
     <option name="SDK_HOME" value="" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -16,6 +13,7 @@
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <module name="CGames" />
+    <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
     <option name="SCRIPT_NAME" value="flask" />
     <option name="PARAMETERS" value="run" />
     <option name="SHOW_COMMAND_LINE" value="false" />
