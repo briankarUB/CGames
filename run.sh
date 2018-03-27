@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Your Google OAuth 2.0 credentials go here
-export GOOGLE_OAUTH_CLIENT_ID="488025799093-a0dllov50krc5qejito100q8rtbk1iib"
-export GOOGLE_OAUTH_CLIENT_SECRET="ZqqNdr3wo6VfqZhYhcvIcgge"
-
-# Required when running the web server without HTTPS support
-export OAUTHLIB_INSECURE_TRANSPORT=1
-
 # Don't modify unless you know what you're doing
 export FLASK_APP="cgames/app.py"
 
