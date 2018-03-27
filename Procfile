@@ -1,1 +1,1 @@
-web: gunicorn cgames
+web: gunicorn cgames.app:app
