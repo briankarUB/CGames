@@ -230,7 +230,3 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/linux,macos,python,windows,pycharm
-
-# Ignore certain run configurations that can contain secret information
-.idea/runConfigurations/Flask__Production_.xml
-.idea/runConfigurations/Flask__Debug_.xml
