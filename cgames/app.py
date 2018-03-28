@@ -14,6 +14,11 @@ def assignments():
     return render_template('assignments.html')
 
 
+@app.route('/assignments/1')
+def game():
+    return render_template('assignments/1.html')
+
+
 @app.route('/leaderboard')
 def leaderboard():
     return render_template('leaderboard.html')
