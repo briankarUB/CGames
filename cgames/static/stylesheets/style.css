@@ -1,42 +1,48 @@
 .answers li {
-list-style: upper-alpha;
+  list-style: upper-alpha;
 }
 
 label {
-margin-left: 0.5em;
-cursor: pointer;
+  margin-left: 0.5em;
+  cursor: pointer;
 }
 
-#results {
-background: #dddada;
-color: 000000;
-padding: 3px;
-text-align: center;
-width: 200px;
-cursor: pointer;
-border: 1px solid gray;
+#results, #startButton {
+  background-color: #3d91b8;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+#showQuestions {
+  display: none;
 }
 
 #results:hover {
-background: #3d91b8;
-color: #ffffff;
-padding: 3px;
-text-align: center;
-width: 200px;
-cursor: pointer;
-border: 1px solid gray;
+  background: red;
+}
+
+#startButton:hover {
+  background: #4CAF50;
 }
 
 #categorylist {
-margin-top: 6px;
-display: none;
+  margin-top: 6px;
+  display: none;
 }
 
 #category1, #category2, #category3, #category4, #category5, #category6, #category7, #category8, #category9, #category10, #category11 {
-display: none;
+  display: none;
 }
 
 #closing {
-display: none;
-font-style: italic;
+  display: none;
+  font-style: italic;
 }
