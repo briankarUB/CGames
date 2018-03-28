@@ -3,6 +3,8 @@
 [![Requires.io](https://img.shields.io/requires/github/briankarUB/CGames/develop.svg)](https://requires.io/github/briankarUB/CGames/requirements/?branch=develop)
 [![Gitter](https://img.shields.io/gitter/room/CGames_CSE442/Lobby.svg)](https://gitter.im/CGames_CSE442/Lobby)  
 CSE 442 project for Spring 2018.
+## Alpha Release Link
+https://youtu.be/nsEXysNUXk4
 
 ## Prototype link
 https://www.youtube.com/watch?v=gKoA1O_O3Zs
