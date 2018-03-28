@@ -38,8 +38,9 @@
           <div class="col-lg-8 mx-auto">
             <h2>Variables and Types</h2>
             <p>
-                Variables in python are assigned by the equal sign '=' x=1, y='abc' z = True
-                Python automatically assumes type, meaning it knows x is an int, y is a string and z is a boolean
+                Variables in python are assigned by the equal sign '='<br>
+                For example: x=1, y='abc' z = True<br>
+                Python automatically assumes type, meaning in these cases, it knows x is an int, y is a string and z is a boolean.
             </p>
           </div>
         </div>
@@ -53,8 +54,8 @@
             <h2>Numbers</h2>
             <p>
                 Now, what do those types mean?
-                these are default python types that python can operate on; others include float, Decimal...
-                the int type are whole numbers and have the operatiors +(addition) -(subtraction) *(multiplication) /(division)
+                These are default python types that python can operate on; others include Float, Decimal...
+                The int type refers to whole numbers. Ints have the operators +(addition) -(subtraction) *(multiplication) and /(division)
                 an example:
             </p>
               <p class="bg-white">
@@ -69,7 +70,8 @@
             </p>
             <p>
                 The integer numbers (2,4,20) have type int, the ones with a decimal (5.0,1.6) have type float.
-                division always returns a float, to get floor division use the operator // and for remainder %
+                Division always returns a float<br>
+                To get floor division use the operator // and for remainder use the operator %
             </p>
             <p class="bg-white">
                 >>> width = 20<br>
@@ -78,7 +80,7 @@
                 900
             </p>
             <p>
-                See how variables are used? varialbes can be set to almost any name excluding some python operators
+                See how variables are used? Variables can be set to almost any name excluding some python operators
                 like 'for' or 'in'.
             </p>
           </div>
@@ -92,8 +94,8 @@
           <div class="col-lg-8 mx-auto">
             <h2>Strings</h2>
             <p >
-                Python can also manipulate strings. Strings are words or sets of characters surrondded by "" or ''
-                Heres and example:
+                Python can also manipulate strings. Strings are words or sets of characters surrounded by "" or ''
+                Here's an example:
             </p>
             <p class="bg-light">
                 >>> 'spam eggs'  # single quotes<br>
@@ -110,7 +112,7 @@
                 '"Isn\'t," she said.'<br>
             </p>
             <p>
-                Strings can be concatonated together with the + operator and repeated with *
+                Strings can be concatenated together with the + operator and repeated with *
             </p>
             <p class="bg-light">
                 >>> 'hi' + ' ' + 'there'<br>
@@ -120,7 +122,7 @@
             </p>
             <p>
                 Since strings can be looked at as a list of characters, they can be indexed, with the first character having
-                an index of 0. In python there is no type for character, they are just strings with size one.
+                an index of 0. In python there is no type for character, they are just strings with a length of one.
             </p>
             <p class="bg-light">
                 >>> word = 'Python'<br>
@@ -130,7 +132,7 @@
                 'n'<br>
             </p>
             <p>
-                Indices may also be negative numbers, to start counting from the right:
+                Indices may also be negative numbers, if you would like to start counting from the right:
             </p>
             <p class="bg-light">
                 >>> word[-1]  # last character<br>
@@ -162,95 +164,122 @@
         </div>
       </div>
     </section>
-    <p class="question">1. What is the answer to this question?</p>
+    <p class="question">1. What is the type of the variable x in the following code?<br>
+    x = 7 </p>
 
     <ul class="answers">
-    <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Answer 1</label><br/>
-    <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Answer 2</label><br/>
-    <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Answer 3</label><br/>
-    <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">Answer 4</label><br/>
+    <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Int</label><br/>
+    <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Bool</label><br/>
+    <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">String</label><br/>
+    <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">None</label><br/>
     </ul>
 
 
-    <p class="question">2. What is the answer to this question?</p>
+    <p class="question">2. What is the value of y in the following code?<br>
+    x = True<br>
+    z = False<br>
+    y = x or z</p>
 
     <ul class="answers">
-    <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Answer 1</label><br/>
-    <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Answer 2</label><br/>
-    <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Answer 3</label><br/>
-    <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Answer 4</label><br/>
+    <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Int</label><br/>
+    <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Bool</label><br/>
+    <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">String</label><br/>
+    <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">None</label><br/>
     </ul>
 
-    <p class="question">3. What is the answer to this question?</p>
+    <p class="question">3. What is the output of the following code?<br>
+    x = "Python"<br>
+    y = x[2]<br>
+    print(y)<br></p>
 
     <ul class="answers">
-    <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Answer 1</label><br/>
-    <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Answer 2</label><br/>
-    <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Answer 3</label><br/>
-    <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">Answer 4</label><br/>
+    <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">'P'</label><br/>
+    <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">'y'</label><br/>
+    <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">'t'</label><br/>
+    <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">'h'</label><br/>
     </ul>
 
-    <p class="question">4. What is the answer to this question?</p>
+    <p class="question">4. How about this code...What will it print?<br>
+    a = "Java"
+    b = a[-4]<br>
+    print(b)<br></p>
 
     <ul class="answers">
-    <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Answer 1</label><br/>
-    <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Answer 2</label><br/>
-    <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Answer 3</label><br/>
-    <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">Answer 4</label><br/>
+    <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">'v'</label><br/>
+    <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">''</label><br/>
+    <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">'a'</label><br/>
+    <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">'J'</label><br/>
     </ul>
 
-    <p class="question">5. What is the answer to this question?</p>
+    <p class="question">5. In the code below, what is the type of variable z?<br>
+    x = 35<br>
+    y = 5<br>
+    z = x * y</p>
 
     <ul class="answers">
-    <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Answer 1</label><br/>
-    <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Answer 2</label><br/>
-    <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">Answer 3</label><br/>
-    <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Answer 4</label><br/>
+    <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Int</label><br/>
+    <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Float</label><br/>
+    <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">String</label><br/>
+    <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Bool</label><br/>
     </ul>
 
-    <p class="question">6. What is the answer to this question?</p>
+    <p class="question">6. How about now...what is the type of variable z?<br>
+    x = 35<br>
+    y = 5<br>
+    z = x/y</p>
 
     <ul class="answers">
-    <input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Answer 1</label><br/>
-    <input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Answer 2</label><br/>
-    <input type="radio" name="q6" value="c" id="q6c"><label for="q6c">Answer 3</label><br/>
-    <input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Answer 4</label><br/>
+    <input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Int</label><br/>
+    <input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Float</label><br/>
+    <input type="radio" name="q6" value="c" id="q6c"><label for="q6c">String</label><br/>
+    <input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Bool</label><br/>
     </ul>
 
-    <p class="question">7. What is the answer to this question?</p>
+    <p class="question">7. Which of the following is a legal variable name?</p>
 
     <ul class="answers">
-    <input type="radio" name="q7" value="a" id="q7a"><label for="q7a">Answer 1</label><br/>
-    <input type="radio" name="q7" value="b" id="q7b"><label for="q7b">Answer 2</label><br/>
-    <input type="radio" name="q7" value="c" id="q7c"><label for="q7c">Answer 3</label><br/>
-    <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">Answer 4</label><br/>
+    <input type="radio" name="q7" value="a" id="q7a"><label for="q7a">in</label><br/>
+    <input type="radio" name="q7" value="b" id="q7b"><label for="q7b">for</label><br/>
+    <input type="radio" name="q7" value="c" id="q7c"><label for="q7c">python</label><br/>
+    <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">while</label><br/>
     </ul>
 
-    <p class="question">8. What is the answer to this question?</p>
+    <p class="question">8. What are the values of a and b, based on the code below?<br>
+    x = 27<br>
+    y = 7<br>
+    a = x//y<br>
+    b = x % y</p>
 
     <ul class="answers">
-    <input type="radio" name="q8" value="a" id="q8a"><label for="q8a">Answer 1</label><br/>
-    <input type="radio" name="q8" value="b" id="q8b"><label for="q8b">Answer 2</label><br/>
-    <input type="radio" name="q8" value="c" id="q8c"><label for="q8c">Answer 3</label><br/>
-    <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">Answer 4</label><br/>
+    <input type="radio" name="q8" value="a" id="q8a"><label for="q8a">a is 0, b is 4</label><br/>
+    <input type="radio" name="q8" value="b" id="q8b"><label for="q8b">a is 4, b is 0</label><br/>
+    <input type="radio" name="q8" value="c" id="q8c"><label for="q8c">a is 6, b is 3</label><br/>
+    <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">a is 3, b is 6</label><br/>
     </ul>
 
-<p class="question">9. What is the answer to this question?</p>
+<p class="question">9. What is the result of the following code?<br>
+s = 25<br>
+p = 5<br>
+t = s/(p*p)<br>
+print(t)</p>
 
 <ul class="answers">
-<input type="radio" name="q9" value="a" id="q9a"><label for="q9a">Answer 1</label><br/>
-<input type="radio" name="q9" value="b" id="q9b"><label for="q9b">Answer 2</label><br/>
-<input type="radio" name="q9" value="c" id="q9c"><label for="q9c">Answer 3</label><br/>
-<input type="radio" name="q9" value="d" id="q9d"><label for="q9d">Answer 4</label><br/>
+<input type="radio" name="q9" value="a" id="q9a"><label for="q9a">1.0</label><br/>
+<input type="radio" name="q9" value="b" id="q9b"><label for="q9b">25.0</label><br/>
+<input type="radio" name="q9" value="c" id="q9c"><label for="q9c">1</label><br/>
+<input type="radio" name="q9" value="d" id="q9d"><label for="q9d">25</label><br/>
 </ul>
 
-<p class="question">10. What is the answer to this question?</p>
+<p class="question">10. Now, this code has been slightly changed -- what is the result?<br>
+s = 25<br>
+p = 5<br>
+t = (s/p)*p</p>
 
 <ul class="answers">
-<input type="radio" name="q10" value="a" id="q10a"><label for="q10a">Answer 1</label><br/>
-<input type="radio" name="q10" value="b" id="q10b"><label for="q10b">Answer 2</label><br/>
-<input type="radio" name="q10" value="c" id="q10c"><label for="q10c">Answer 3</label><br/>
-<input type="radio" name="q10" value="d" id="q10d"><label for="q10d">Answer 4</label><br/>
+<input type="radio" name="q10" value="a" id="q10a"><label for="q10a">1.0</label><br/>
+<input type="radio" name="q10" value="b" id="q10b"><label for="q10b">25.0</label><br/>
+<input type="radio" name="q10" value="c" id="q10c"><label for="q10c">1</label><br/>
+<input type="radio" name="q10" value="d" id="q10d"><label for="q10d">25</label><br/>
 </ul>
 
 <br/>
@@ -307,8 +336,11 @@ Show me the answers!
 <p>
 <strong>Question 10:</strong> The correct answer is <strong>Answer 2</strong>.</p>
 </div>
-    <div id = <"results"></div>
-    <br>
+
+<div id="category11">
+<p>
+You answered them all right!</p>
+</div>
 
 
 
