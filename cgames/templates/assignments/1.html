@@ -1,29 +1,22 @@
 {% extends "layout/default.html" %}
 {% block title %}Assignments{% endblock %}
-{% block content %}
+{% block navbar_items %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#types">Types</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#numbers">Numbers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#strings">Strings</a>
+    </li>
+  </ul>
+</div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#types">Types</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#numbers">Numbers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#strings">Strings</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+{% endblock %}
+{% block content %}
 
     <header class="bg-secondary text-white">
       <div class="container text-center">
@@ -359,19 +352,9 @@ You answered them all right!</p>
 {% block scripts %}
     {{ super() }}
     <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
 
     <!-- Custom JavaScript for this theme -->
     <script src="{{ url_for('static', filename='js/assignments/quiz-1.js') }}"></script>
-    <script>
-        var cat1 = ($("input[@name=q1]:checked").val() != "a");
-
-        var cat2 = ($("input[@name=q2]:checked").val() != "b");
-    </script>
+  
     <script src="{{ url_for('static', filename='js/assignments/jquery.js') }}"></script>
 {% endblock %}
-
-
-
-
-
