@@ -113,7 +113,7 @@ else {
   if (cat11) { $("#category11").show("slow"); };
   { $("#closing").show("slow"); };
   // window.alert("You Score is " + (points *10) + " and your time was " + t + "s");
-  document.getElementById("score").innerHTML = "You Score is " + (points *10) + " and your time was " + end_time + "s";
+  document.getElementById("score").innerHTML = "Your Score is " + (points *10) + " out of 100 and your time was " + end_time + "s";
   document.getElementById("compare").innerHTML = "Compare how you stack up against other users: Coming soon!";
 }
     });
