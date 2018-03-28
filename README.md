@@ -4,6 +4,8 @@
 [![Gitter](https://img.shields.io/gitter/room/CGames_CSE442/Lobby.svg)](https://gitter.im/CGames_CSE442/Lobby)  
 CSE 442 project for Spring 2018.
 ## Alpha Release Link
+https://cgames-cse442.herokuapp.com/
+## Alpha Video Link
 https://youtu.be/nsEXysNUXk4
 
 ## Prototype link
