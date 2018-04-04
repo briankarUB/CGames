@@ -34,6 +34,14 @@ languages could be added to the web app later.
 3. Ability to share a highscore to a social media account.
 
 ## Get started
+### Python setup
+CGames requires Python 3.5+ to run. Head to the 
+[Python website](https://www.python.org/downloads/) to install it before
+moving on to the next step. It's recommended that you add Python to your
+PATH so that the `python` interpreter can be seamlessly called from any 
+terminal window. 
+
+### CGames setup
 To jump right into development, clone the project and run either `run.bat` or
 `run.sh`, depending on your operating system. This will perform initial
 installation and start a Flask web server running CGames.
