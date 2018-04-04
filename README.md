@@ -37,7 +37,9 @@ languages could be added to the web app later.
 ### Python setup
 CGames requires Python 3.5+ to run. Head to the 
 [Python website](https://www.python.org/downloads/) to install it before
-moving on to the next step.
+moving on to the next step. It's recommended that you add Python to your
+PATH so that the `python` interpreter can be seamlessly called from any 
+terminal window. 
 
 ### CGames setup
 To jump right into development, clone the project and run either `run.bat` or
