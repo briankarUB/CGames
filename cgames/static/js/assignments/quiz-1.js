@@ -41,14 +41,16 @@ if (!$("input[@name=q1]:checked").val() ||
 !$("input[@name=q7]:checked").val() ||
 !$("input[@name=q8]:checked").val() ||
 !$("input[@name=q9]:checked").val() ||
-!$("input[@name=q10]:checked").val()
+!$("input[@name=q10]:checked").val()||
+!$("input[@name=q11]:checked").val()||
+!$("input[@name=q12]:checked").val()
 ) {
 alert("You're not done yet!");
 }
 
 else {
   stopCount();
-  var points = 10;
+  var points = 12;
   var cat1name = "1";
   var cat2name = "2";
   var cat3name = "3";
@@ -59,7 +61,10 @@ else {
   var cat8name = "8";
   var cat9name = "9";
   var cat10name = "10";
-  var cat11name = "None";
+  var cat11name = "11";
+  var cat12name = "12";
+  var cat13name = "None";
+
 
 
   var cat1 = ($("input[@name=q1]:checked").val() != "a");
@@ -82,7 +87,11 @@ else {
 
   var cat10 = ($("input[@name=q10]:checked").val() != "b");
 
-  var cat11 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10); var categories = [];
+  var cat11 = ($("input[@name=q11]:checked").val() != "c");
+
+  var cat12 = ($("input[@name=q12]:checked").val() != "a");
+
+  var cat13 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10 && !cat11 && !cat12); var categories = [];
 
   if (cat1) { categories.push(cat1name) };
   if (cat2) { categories.push(cat2name) };
@@ -95,6 +104,8 @@ else {
   if (cat9) { categories.push(cat9name) };
   if (cat10) { categories.push(cat10name) };
   if (cat11) { categories.push(cat11name) };
+  if (cat12) { categories.push(cat12name) };
+  if (cat13) { categories.push(cat13name) };
 
   var catStr = 'You answered the following questions incorrectly: ' + categories.join(', ') + '';
   $("#categorylist").text(catStr);
@@ -110,10 +121,13 @@ else {
   if (cat8) { $("#category8").show("slow"); points = points -1;};
   if (cat9) { $("#category9").show("slow"); points = points -1;};
   if (cat10) { $("#category10").show("slow"); points = points -1;};
-  if (cat11) { $("#category11").show("slow"); };
+  if (cat11) { $("#category11").show("slow"); points = points -1;};
+  if (cat12) { $("#category12").show("slow"); points = points -1;};
+
+  if (cat13) { $("#category13").show("slow"); };
   { $("#closing").show("slow"); };
   // window.alert("You Score is " + (points *10) + " and your time was " + t + "s");
-  document.getElementById("score").innerHTML = "Your Score is " + (points *10) + " out of 100 and your time was " + end_time + "s";
+  document.getElementById("score").innerHTML = "Your Score is " + (points *10) + " out of 120 and your time was " + end_time + "s";
   document.getElementById("compare").innerHTML = "Compare how you stack up against other users: Coming soon!";
 
   var x = document.getElementById("results");
