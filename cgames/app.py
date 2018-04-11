@@ -1,8 +1,10 @@
-from flask import Flask, abort, render_template
+from flask import Flask, abort, render_template, g
 from jinja2 import TemplateNotFound
 
 app = Flask(__name__)
 app.secret_key = 'development key'
+#board = [["ben","100"],["cory","200"],["matt","300"],["sai","400"],["brain","500"]]
+board = {'ben':100,'cory':200,'matt':300,'sai':400,'brian':500}
 
 
 @app.route('/')
@@ -22,7 +24,7 @@ def game():
 
 @app.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html')
+    return render_template('leaderboard.html',leaderboard = board)
 
 
 @app.route('/assignments/<int:n>')
