@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'development key')
 
 # Jinja2 configuration
-app.jinja_env.globals.update(dedent=textwrap.dedent, print=print)
 app.jinja_env.add_extension('jinja2.ext.do')
+app.jinja_env.filters['dedent'] = lambda s: textwrap.dedent(s.lstrip('\n'))
 
 
 @app.route('/')

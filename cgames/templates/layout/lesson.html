@@ -6,7 +6,7 @@
     {% do sections.append(name) %}
 
     {# Change the background of even-numbered sections, where the first is 1 #}
-    {% if sections|length is divisibleby 2 %}
+    {% if sections | length is divisibleby 2 %}
         {% set section_class = "bg-light" %}
     {% endif %}
 
