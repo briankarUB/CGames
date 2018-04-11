@@ -1,7 +1,5 @@
 {% macro python_code() %}
-    <pre>
-        <code class="python">
-            {{- dedent(caller()) }}
-        </code>
-    </pre>
-{% endmacro %}
+    <pre><code class="python">
+        {{- dedent(caller()) }}
+    </code></pre>
+{% endmacro -%}
