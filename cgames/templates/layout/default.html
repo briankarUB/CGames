@@ -7,16 +7,24 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
             <title>{% block title %}{% endblock %} - CGames</title>
+
             <link rel="icon" href="{{ url_for('static', filename='cg_icon.ico') }}">
 
+            {# Vendor stylesheets #}
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css"
+                  integrity="sha256-NJWeQ+bs82iAeoT5Ktmqbi3NXwxcHlfaVejzJI2dklU="
+                  crossorigin="anonymous" />
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"
+                  integrity="sha256-akwTLZec/XAFvgYgVH1T5/369lhA2Efr22xzCNl1nHs="
+                  crossorigin="anonymous" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
-            {# Stylesheets #}
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
-                  integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous" />
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            {# Custom stylesheet #}
             <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous" />
+
+            {# HTML5 shim library for Internet Explorer 8 and below. #}
             <!--[if lt IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
             <![endif]-->
@@ -24,7 +32,10 @@
     </head>
 
     <body>
-        {# Top navbar #}
+        {# Main content #}
+        {% block content %}{% endblock %}
+
+        {# Top navbar, after content because of sequential rendering of Jinja2 templates #}
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
             <div class="container">
                 <a href="{{ url_for('index') }}" class="navbar-brand">CGames</a>
@@ -39,22 +50,29 @@
             </div>
         </nav>
 
-        {# Main content #}
-            {% block content %}{% endblock %}
-
         {# Scripts #}
         {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"
-                    integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY=" crossorigin="anonymous"></script>
+            {# Vendor scripts #}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"
+                    integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY="
+                    crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"
-                    integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous"></script>
-            <script src="{{ url_for('static', filename='js/init.js') }}"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
-            <script src="https://blackrockdigital.github.io/startbootstrap-scrolling-nav/js/scrolling-nav.js"></script>
+                    integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs="
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+                    integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k="
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+                    integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw="
+                    crossorigin="anonymous"></script>
 
-            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/go.min.js"></script>
+            <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/scrolling-nav.js') }}"></script>
+
+            {# Initialize Highlight.js #}
             <script>hljs.initHighlightingOnLoad();</script>
         {% endblock %}
     </body>
