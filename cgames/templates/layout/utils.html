@@ -1,5 +1,5 @@
-{% macro python_code() %}
-    <pre><code class="python">
+{% macro code(language) %}
+    <pre><code class="{{ language }}">
         {{- caller() | dedent -}}
     </code></pre>
 {% endmacro %}

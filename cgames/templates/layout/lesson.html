@@ -1,23 +1,47 @@
 {% extends "layout/default.html" %}
-{% set sections = [] %}  {# For keeping track of scrollspy navigation #}
+
+{% set sections = [] %}  {# Scrollspy navigation state #}
+{% set section_class = cycler('', 'bg-light') %} {# Alternate row colors #}
+
+{% block navbar_items %}
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            {% for anchor, name in sections %}
+                <li class="nav-item">
+                    <a href="#{{ anchor }}" class="nav-link js-scroll-trigger">{{ name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <header class="bg-secondary text-white" style="margin-top: 55px">
+        <div class="container-fluid text-center p-3">
+            <h1>{% block lesson_title %}{% endblock %}</h1>
+            <p class="lead">Learn Python!</p>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        {% block sections %}{% endblock %}
+    </div>
+
+    <footer class="container-fluid">
+        <div class="row py-3 bg-dark">
+            <small class="mx-auto text-center text-white">Copyright &copy; CGames 2018</small>
+        </div>
+    </footer>
+{% endblock %}
 
 {# Makes a formatted section and adds it to scrollspy #}
-{% macro section(name) %}
-    {% do sections.append(name) %}
-
-    {# Change the background of even-numbered sections, where the first is 1 #}
-    {% if sections | length is divisibleby 2 %}
-        {% set section_class = "bg-light" %}
-    {% endif %}
+{% macro section(anchor, name) %}
+    {% do sections.append((anchor, name)) %}
 
     {# Surround passed-in markup with boilerplate section markup #}
-    <section {{ 'class=' ~ section_class if section_class }} id="{{ name }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    {{- caller() }}
-                </div>
-            </div>
+    <section class="row {{ section_class.next() }} py-3" id="{{ anchor }}">
+        <div class="col-lg-7 mx-auto">
+            {{- caller() }}
         </div>
     </section>
 {% endmacro %}

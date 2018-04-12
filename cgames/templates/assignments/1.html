@@ -1,84 +1,99 @@
 {% extends "layout/lesson.html" %}
-{% import "layout/utils.html" as macros %}
-{% block title %}Assignments{% endblock %}
-{% block navbar_items %}
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#types">Types</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#numbers">Numbers</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#strings">Strings</a>
-            </li>
-        </ul>
-    </div>
-{% endblock %}
-
-{% block content %}
-    <header class="bg-secondary text-white" style="margin-top: 56px">
-        <div class="container text-center p-3">
-            <h1>Assignment 1</h1>
-            <p class="lead">Learn Python!</p>
-        </div>
-    </header>
-
-    {% call section('types') %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 1{% endblock %}
+{% block lesson_title %}Lesson 1{% endblock %}
+{% block sections %}
+    {% call section('types', 'Types') %}
         <h2>Variables and Types</h2>
         <p>
-            Variables in python are assigned by the equal sign '='<br>
-            For example: x=1, y='abc' z = True<br>
-            Python automatically assumes type, meaning in these cases, it knows x is an int, y is a string and z is a boolean.
+            Variables in Python are assigned using the assignment operator <code>=</code>.
+            The assignment operator is the same character as the equals sign.
+
+            {% call utils.code('python') %}
+            >>> x = 1
+            >>> y = 'abc'
+            >>> z = True
+            {% endcall %}
+
+            Python automatically understands each variable's type,
+            meaning that in the above example,
+            it knows <code>x</code> is of type <code>int</code>,
+            <code>y</code> is of type <code>str</code>,
+            and <code>z</code> is of type <code>bool</code>.
         </p>
     {% endcall %}
 
-    {% call section('numbers') %}
+    {% call section('numbers', 'Numbers') %}
         <h2>Numbers</h2>
         <p>
             Now, what do those types mean?
-            These are default python types that python can operate on; others include Float, Decimal...
-            The int type refers to whole numbers. Ints have the operators +(addition) -(subtraction) *(multiplication) and /(division)
-            an example:
+            These are default types that Python can operate on. Other default types include
+            <code>float</code>, <code>Decimal</code>, <code>list</code>, <code>dict</code>,
+            and more.
         </p>
-        {% call macros.python_code() %}
+        <p>
+            The <code>int</code> type refers to whole numbers. <code>int</code> supports the
+            following arithmetic operations:
+            <ul>
+                <li>Addition (<code>+</code>)</li>
+                <li>Subtraction (<code>-</code>)</li>
+                <li>Multiplication (<code>*</code>)</li>
+                <li>Division (<code>/</code>)</li>
+                <li>Integer division (<code>//</code>)</li>
+                <li>Modulo (<code>%</code>)</li>
+                <li>Exponentiation (<code>**</code>)</li>
+            </ul>
+            Here's an example:
+        </p>
+        {% call utils.code('python') %}
             >>> 2 + 2
             4
-            >>> 50 - 5*6
+            >>> 50 - 5 * 6  # Python understands the order of operations...
             20
-            >>> (50 - 5*6) / 4
+            >>> (50 - 5 * 6) / 4  # ...but you can also use parentheses
             5.0
-            >>> 8 / 5  # division always returns a floating point number
+            >>> 8 / 5  # Exact division; always returns a float
             1.6
-        {%- endcall %}
+            >>> 5 ** 2  # 5 raised to the power 2
+            25
+        {% endcall %}
         <p>
-            The integer numbers (2,4,20) have type int, the ones with a decimal (5.0,1.6) have type float.
-            Division always returns a float<br>
-            To get floor division use the operator // and for remainder use the operator %
+            The numbers <code>2</code>, <code>4</code>, and <code>20</code> have
+            type <code>int</code>, whereas <code>5.0</code> and <code>1.6</code>
+            have type <code>float</code>.
         </p>
-        {% call macros.python_code() %}
+        <p>
+            Division always returns a <code>float</code>. To perform floor division
+            (divide and round down), use the integer division operator (<code>//</code>).
+            To find the remainder of a division, use the modulo operator (<code>%</code>).
+        </p>
+        {% call utils.code('python') %}
             >>> width = 20
             >>> height = 5 * 9
             >>> width * height
             900
         {% endcall %}
         <p>
-            See how variables are used? Variables can be set to almost any name excluding some python operators
-            like 'for' or 'in'.
+            Now do you see how variables are used? Variables can be set to almost
+            any name, excluding some keywords reserved by Python that have special
+            meanings (e.g., <code>for</code>, <code>in</code>, and <code>not</code>).
         </p>
     {% endcall %}
 
-    {% call section('strings') %}
+    {% call section('strings', 'Strings') %}
         <h2>Strings</h2>
         <p>
-            Python can also manipulate strings. Strings are words or sets of characters surrounded by "" or ''
+            Python can also manipulate strings. A string (denoted by the type
+            <code>str</code>) is a sequence of characters surrounded by matching
+            sets of quotation marks.
+        </p>
+        <p>
             Here's an example:
         </p>
-        {% call macros.python_code() %}
+        {% call utils.code('python') %}
             >>> 'spam eggs'  # single quotes
             'spam eggs'
-            >>> 'doesn\'t'  # use \' to escape the single quote...
+            >>> 'doesn\'t'  # Use \' to "escape", or ignore the single quote...
             "doesn't"
             >>> "doesn't"  # ...or use double quotes instead
             "doesn't"
@@ -88,248 +103,241 @@
             '"Yes," he said.'
             >>> '"Isn\'t," she said.'
             '"Isn\'t," she said.'
+            >>> """Some long
+            ... line"""  # You can also use triple quotes for multi-line strings
+            'Some long\nline'  # \n is a special character that creates a new line
         {% endcall %}
         <p>
-            Strings can be concatenated together with the + operator and repeated with *
+            Strings can be concatenated together with the addition (<code>+</code>)
+            operator, and repeated with the multiplication (<code>*</code>) operator:
         </p>
-        {% call macros.python_code() %}
+        {% call utils.code('python') %}
             >>> 'hi' + ' ' + 'there'
             hi there
-            >>> 2*'yo'
+            >>> 2 * 'yo'
             yoyo
         {% endcall %}
         <p>
-            Since strings can be looked at as a list of characters, they can be indexed, with the first character having
-            an index of 0. In python there is no type for character, they are just strings with a length of one.
+            Since strings act like a list of characters, they can be indexed.
+            The first character has the index <code>0</code> (this language property
+            is known as "zero-indexing", and many languages share this property).
+            In Python, characters don't have their own type. They are simply
+            strings of length <code>1</code>.
         </p>
-        {% call macros.python_code() %}
+        {% call utils.code('python') %}
             >>> word = 'Python'
-            >>> word[0]  # character in position 0
+            >>> word[0]  # Gets the character in position 0
             'P'
-            >>> word[5]  # character in position 5
+            >>> word[5]  # Gets the character in position 5
             'n'
         {% endcall %}
         <p>
-            Indices may also be negative numbers, if you would like to start counting from the right:
+            If you want to index starting from the end of the string, you can
+            pass a negative index instead. Note that reverse indexing starts at
+            <code>-1</code> and not <code>0</code>.
         </p>
-        {% call macros.python_code() %}
-            >>> word[-1]  # last character
+        {% call utils.code('python') %}
+            >>> word[-1]  # Gets the last character
             'n'
-            >>> word[-2]  # second-last character
+            >>> word[-2]  # Gets the second to last character
             'o'
             >>> word[-6]
             'P'
         {% endcall %}
         <p>
-            Attempting to use an index that is too large will result in an error:
+            If you try to use an index that's too large, you'll get an
+            <code>IndexError</code>:
         </p>
-        {% call macros.python_code() %}
-            >>> word[42]  # the word only has 6 characters
+        {% call utils.code('python') %}
+            >>> word[42]  # 'Python' only has 6 characters
             Traceback (most recent call last):
-            File "stdin", line 1, in module
+              File "<input>", line 1, in <module>
+            IndexError: string index out of range
+            >>> word[-8]
+            Traceback (most recent call last):
+              File "<input>", line 1, in <module>
             IndexError: string index out of range
         {% endcall %}
     {% endcall %}
 
-    <section id="games">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Start Game!</h2>
+    {% call section('quiz', 'Quiz') %}
+        <h2>Start Game!</h2>
 
-                    <input type="button" id="startButton" name="answer" value="Start" onclick="showDiv()" />
+        <input type="button" id="startButton" name="answer" value="Start" onclick="showDiv()" />
 
-                    <div id="showQuestions">
+        <div id="showQuestions">
 
-                        <p class="question">1. What is the type of the variable x in the following code?<br> x = 7 </p>
+            <p class="question">1. What is the type of the variable x in the following code?<br> x = 7 </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Int</label><br />
-                            <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Bool</label><br />
-                            <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">String</label><br />
-                            <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">None</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Int</label><br />
+                <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">Bool</label><br />
+                <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">String</label><br />
+                <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">None</label><br />
+            </ul>
 
 
-                        <p class="question">2. What is the value of y in the following code?<br> x = True<br> z = False<br> y = x or z
-                        </p>
+            <p class="question">2. What is the value of y in the following code?<br> x = True<br> z = False<br> y = x or z
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Int</label><br />
-                            <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Bool</label><br />
-                            <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">String</label><br />
-                            <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">None</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Int</label><br />
+                <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Bool</label><br />
+                <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">String</label><br />
+                <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">None</label><br />
+            </ul>
 
-                        <p class="question">3. What is the output of the following code?<br> x = "Python"<br> y = x[2]<br> print(y)
-                            <br></p>
+            <p class="question">3. What is the output of the following code?<br> x = "Python"<br> y = x[2]<br> print(y)
+                <br></p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">'P'</label><br />
-                            <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">'y'</label><br />
-                            <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">'t'</label><br />
-                            <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">'h'</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">'P'</label><br />
+                <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">'y'</label><br />
+                <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">'t'</label><br />
+                <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">'h'</label><br />
+            </ul>
 
-                        <p class="question">4. How about this code...What will it print?<br> a = "Java" b = a[-4]<br> print(b)
-                            <br></p>
+            <p class="question">4. How about this code...What will it print?<br> a = "Java" b = a[-4]<br> print(b)
+                <br></p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">'v'</label><br />
-                            <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">''</label><br />
-                            <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">'a'</label><br />
-                            <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">'J'</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">'v'</label><br />
+                <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">''</label><br />
+                <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">'a'</label><br />
+                <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">'J'</label><br />
+            </ul>
 
-                        <p class="question">5. In the code below, what is the type of variable z?<br> x = 35<br> y = 5<br> z = x * y
-                        </p>
+            <p class="question">5. In the code below, what is the type of variable z?<br> x = 35<br> y = 5<br> z = x * y
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Int</label><br />
-                            <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Float</label><br />
-                            <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">String</label><br />
-                            <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Bool</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Int</label><br />
+                <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Float</label><br />
+                <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">String</label><br />
+                <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Bool</label><br />
+            </ul>
 
-                        <p class="question">6. How about now...what is the type of variable z?<br> x = 35<br> y = 5<br> z = x/y
-                        </p>
+            <p class="question">6. How about now...what is the type of variable z?<br> x = 35<br> y = 5<br> z = x/y
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Int</label><br />
-                            <input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Float</label><br />
-                            <input type="radio" name="q6" value="c" id="q6c"><label for="q6c">String</label><br />
-                            <input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Bool</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q6" value="a" id="q6a"><label for="q6a">Int</label><br />
+                <input type="radio" name="q6" value="b" id="q6b"><label for="q6b">Float</label><br />
+                <input type="radio" name="q6" value="c" id="q6c"><label for="q6c">String</label><br />
+                <input type="radio" name="q6" value="d" id="q6d"><label for="q6d">Bool</label><br />
+            </ul>
 
-                        <p class="question">7. Which of the following is a legal variable name?</p>
+            <p class="question">7. Which of the following is a legal variable name?</p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q7" value="a" id="q7a"><label for="q7a">in</label><br />
-                            <input type="radio" name="q7" value="b" id="q7b"><label for="q7b">for</label><br />
-                            <input type="radio" name="q7" value="c" id="q7c"><label for="q7c">python</label><br />
-                            <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">while</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q7" value="a" id="q7a"><label for="q7a">in</label><br />
+                <input type="radio" name="q7" value="b" id="q7b"><label for="q7b">for</label><br />
+                <input type="radio" name="q7" value="c" id="q7c"><label for="q7c">python</label><br />
+                <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">while</label><br />
+            </ul>
 
-                        <p class="question">8. What are the values of a and b, based on the code below?<br> x = 27<br> y = 7<br> a = x//y<br> b = x % y
-                        </p>
+            <p class="question">8. What are the values of a and b, based on the code below?<br> x = 27<br> y = 7<br> a = x//y<br> b = x % y
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q8" value="a" id="q8a"><label for="q8a">a is 0, b is 4</label><br />
-                            <input type="radio" name="q8" value="b" id="q8b"><label for="q8b">a is 4, b is 0</label><br />
-                            <input type="radio" name="q8" value="c" id="q8c"><label for="q8c">a is 6, b is 3</label><br />
-                            <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">a is 3, b is 6</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q8" value="a" id="q8a"><label for="q8a">a is 0, b is 4</label><br />
+                <input type="radio" name="q8" value="b" id="q8b"><label for="q8b">a is 4, b is 0</label><br />
+                <input type="radio" name="q8" value="c" id="q8c"><label for="q8c">a is 6, b is 3</label><br />
+                <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">a is 3, b is 6</label><br />
+            </ul>
 
-                        <p class="question">9. What is the result of the following code?<br> s = 25<br> p = 5<br> t = s/(p*p)<br> print(t)
-                        </p>
+            <p class="question">9. What is the result of the following code?<br> s = 25<br> p = 5<br> t = s/(p*p)<br> print(t)
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q9" value="a" id="q9a"><label for="q9a">1.0</label><br />
-                            <input type="radio" name="q9" value="b" id="q9b"><label for="q9b">25.0</label><br />
-                            <input type="radio" name="q9" value="c" id="q9c"><label for="q9c">1</label><br />
-                            <input type="radio" name="q9" value="d" id="q9d"><label for="q9d">25</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q9" value="a" id="q9a"><label for="q9a">1.0</label><br />
+                <input type="radio" name="q9" value="b" id="q9b"><label for="q9b">25.0</label><br />
+                <input type="radio" name="q9" value="c" id="q9c"><label for="q9c">1</label><br />
+                <input type="radio" name="q9" value="d" id="q9d"><label for="q9d">25</label><br />
+            </ul>
 
-                        <p class="question">10. Now, this code has been slightly changed -- what is the result?<br> s = 25<br> p = 5<br> t = (s/p)*p
-                        </p>
+            <p class="question">10. Now, this code has been slightly changed -- what is the result?<br> s = 25<br> p = 5<br> t = (s/p)*p
+            </p>
 
-                        <ul class="answers">
-                            <input type="radio" name="q10" value="a" id="q10a"><label for="q10a">1.0</label><br />
-                            <input type="radio" name="q10" value="b" id="q10b"><label for="q10b">25.0</label><br />
-                            <input type="radio" name="q10" value="c" id="q10c"><label for="q10c">1</label><br />
-                            <input type="radio" name="q10" value="d" id="q10d"><label for="q10d">25</label><br />
-                        </ul>
+            <ul class="answers">
+                <input type="radio" name="q10" value="a" id="q10a"><label for="q10a">1.0</label><br />
+                <input type="radio" name="q10" value="b" id="q10b"><label for="q10b">25.0</label><br />
+                <input type="radio" name="q10" value="c" id="q10c"><label for="q10c">1</label><br />
+                <input type="radio" name="q10" value="d" id="q10d"><label for="q10d">25</label><br />
+            </ul>
 
-                        <br />
-                        <div id="results">
-                            Show me the answers!
-                        </div>
-                    </div>
-
-
-                    <div id="category1">
-                        <p>
-                            <strong>Question 1:</strong> The correct answer is the <strong>Answer 1</strong>.</p>
-                    </div>
-
-                    <div id="category2">
-                        <p>
-                            <strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>
-                    </div>
-
-                    <div id="category3">
-                        <p>
-                            <strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>
-                    </div>
-
-                    <div id="category4">
-                        <p>
-                            <strong>Question 4:</strong> The correct answer is <strong>Answer 4</strong>.</p>
-                    </div>
-
-                    <div id="category5">
-                        <p>
-                            <strong>Question 5:</strong> The correct answer is <strong>Answer 1</strong>.</p>
-                    </div>
-
-                    <div id="category6">
-                        <p>
-                            <strong>Question 6:</strong> The correct answer is <strong>Answer 2</strong>.</p>
-                    </div>
-
-                    <div id="category7">
-                        <p>
-                            <strong>Question 7:</strong> The correct answer is <strong>Answer 3</strong>.</p>
-                    </div>
-
-                    <div id="category8">
-                        <p>
-                            <strong>Question 8:</strong> The correct answer is <strong>Answer 4</strong>.</p>
-                    </div>
-
-                    <div id="category9">
-                        <p>
-                            <strong>Question 9:</strong> The correct answer is <strong>Answer 1</strong>.</p>
-                    </div>
-
-                    <div id="category10">
-                        <p>
-                            <strong>Question 10:</strong> The correct answer is <strong>Answer 2</strong>.</p>
-                    </div>
-                    <!-- print for score and time -->
-                    <p id="score"></p>
-                    <!-- TODO: link headership board -->
-                    <p id="compare"></p>
-
-
-                    <div id="category11">
-                        <p>
-                            You answered them all right!
-                        </p>
-                    </div>
-                </div>
+            <br />
+            <div id="results">
+                Show me the answers!
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; CGames 2018</p>
+
+        <div id="category1">
+            <p>
+                <strong>Question 1:</strong> The correct answer is the <strong>Answer 1</strong>.</p>
         </div>
-        <!-- /.container -->
-    </footer>
+
+        <div id="category2">
+            <p>
+                <strong>Question 2:</strong> The correct answer is <strong>Answer 2</strong>.</p>
+        </div>
+
+        <div id="category3">
+            <p>
+                <strong>Question 3:</strong> The correct answer is <strong>Answer 3</strong>.</p>
+        </div>
+
+        <div id="category4">
+            <p>
+                <strong>Question 4:</strong> The correct answer is <strong>Answer 4</strong>.</p>
+        </div>
+
+        <div id="category5">
+            <p>
+                <strong>Question 5:</strong> The correct answer is <strong>Answer 1</strong>.</p>
+        </div>
+
+        <div id="category6">
+            <p>
+                <strong>Question 6:</strong> The correct answer is <strong>Answer 2</strong>.</p>
+        </div>
+
+        <div id="category7">
+            <p>
+                <strong>Question 7:</strong> The correct answer is <strong>Answer 3</strong>.</p>
+        </div>
+
+        <div id="category8">
+            <p>
+                <strong>Question 8:</strong> The correct answer is <strong>Answer 4</strong>.</p>
+        </div>
+
+        <div id="category9">
+            <p>
+                <strong>Question 9:</strong> The correct answer is <strong>Answer 1</strong>.</p>
+        </div>
+
+        <div id="category10">
+            <p>
+                <strong>Question 10:</strong> The correct answer is <strong>Answer 2</strong>.</p>
+        </div>
+        <!-- print for score and time -->
+        <p id="score"></p>
+        <!-- TODO: link headership board -->
+        <p id="compare"></p>
 
 
-
+        <div id="category11">
+            <p>
+                You answered them all right!
+            </p>
+        </div>
+    {% endcall %}
 {% endblock %}
 
 {% block scripts %}
     {{ super() }}
-    <!-- Plugin JavaScript -->
 
-    <!-- Custom JavaScript for this theme -->
     <script src="{{ url_for('static', filename='js/assignments/quiz-1.js') }}"></script>
-
-    <script src="{{ url_for('static', filename='js/assignments/jquery.js') }}"></script>
 {% endblock %}
