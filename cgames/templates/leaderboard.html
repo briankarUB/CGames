@@ -1,5 +1,23 @@
 {% extends "layout/default.html" %}
 {% block title %}Leaderboard{% endblock %}
+{% block navbar_items %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="navbar-nav ml-auto">
+  </ul>
+</div>
+
+{% endblock %}
+
 {% block content %}
     <h1>This is the CGames leaderboard page!</h1>
+    <table>
+        {% for col in leaderboard %}
+        <tr>
+
+        <td>{{ col }}</td>
+        <td>{{  leaderboard[col]  }}</td>
+      </tr>
+      {% endfor %}
+
+    </table>
 {% endblock %}

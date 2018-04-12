@@ -24,7 +24,7 @@ def assignments():
 
 @app.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html')
+    return render_template('leaderboard.html',leaderboard = board)
 
 
 @app.route('/assignments/<int:n>')
