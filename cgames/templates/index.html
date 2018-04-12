@@ -2,14 +2,21 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     <div class="jumbotron">
-        <h1 class="display-4">Welcome to CGames</h1>
-        <p class="lead">
+        <h1 class="text-center display-4">Welcome to CGames</h1>
+        <p class="lead text-center">
             A place to learn how to code Python that feels like playing a game.
         </p>
-        <hr class="my-4">
-        <p>
-            <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
-        </p>
+        <hr class="my-4 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <p class="m-10">
+                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
     </div>
     <section id="beta" class="bg-light">
       <div class="container">
