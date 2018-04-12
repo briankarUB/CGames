@@ -122,6 +122,14 @@ else {
     } else {
         x.style.display = "none";
     }
+
+    var name = prompt('What is your name?');
+
+    $.post('../submit_score', {
+        'name': name,
+        'quiz': 1,
+        'score': points * 10
+    });
 }
     });
   });
