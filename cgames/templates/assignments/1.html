@@ -160,6 +160,7 @@
         {% endcall %}
     {% endcall %}
 
+    {# TODO: Modularize #}
     {% call section('quiz', 'Quiz') %}
         <h2>Start Game!</h2>
 
@@ -339,5 +340,6 @@
 {% block scripts %}
     {{ super() }}
 
-    <script src="{{ url_for('static', filename='js/assignments/quiz-1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/assignments/jquery.js') }}"></script> {# TODO: Migrate to modern jQuery #}
+    <script src="{{ url_for('static', filename='js/assignments/quiz-1.js') }}"></script> {# TODO: Modularize #}
 {% endblock %}
