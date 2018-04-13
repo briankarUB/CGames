@@ -1,131 +1,51 @@
-{% extends "layout/lesson.html" %}
-{% import "layout/utils.html" as utils %}
-{% block title %}Lesson 1{% endblock %}
-{% block lesson_title %}Lesson 1{% endblock %}
-{% block sections %}
-    {% call section('types', 'Lists') %}
-        <h2>Lists</h2>
-        <p>
-            In python, we use lists to store multiple elements. In general, all elements in the lists must be of the same type.
-            For syntax, we use brackets, <code>[</code> and <code>]</code>  for lists.
-For example, take a look at this list declaration
-
-            {% call utils.code('python') %}
-            myList = ["python", "java","c sharp", "ruby", "perl"]
-            {% endcall %}
-
-            This list, which I've decided to call myList, is a list of five strings.
-            Notice that I don't have to write (and should not write)
-            <code>list myList = ['python', 'java','c sharp', 'ruby', 'perl']</code><br>
-            As you can see, my list has 5 elements. I can call len on myList to get the size of the
-            list I've created. In this case <code>len(myList) == 5.</code><br><br>
-            Now let's say I want to add 'kuda' to myList. To do this, I use the append() function, like this:
-            <code>myList.append('kuda')</code> and the result is:
-            <code>['python', 'java','c sharp', 'ruby', 'perl', 'kuda']</code><br>
-            But, let's say I want 'kuda' at the beginning of my list.
-            To do this, append() won't help me. Instead, I'll have to use the insert() method.
-            insert() takes two arguments. the index where you want the new element to go, and then the element
-            you want to add, like this!<br><br>
-            <code>myList.insert(0,'kuda')</code>
-            This tells my Python program to add kuda to myList at index 0. The result is:
-            <code>['kuda','python', 'java','c sharp', 'ruby', 'perl']</code><br><br>
-            'kuda' is at index 0, and all other elements have been moved to the right(each element's index
-            has been increased by 1)<br>
-            Notice that I don't have to tell Python to make myList bigger to make room for the new element
-            'kuda' that I'm adding. It knows to do this and takes care of it automatically.
-            If I want to remove an element I use the function remove(). remove() takes one argument,
-            the element that you want to take out of the list. So, if I want to remove 'java' I'd write
-            <code>myList.remove('java')</code>
-            then if I call <code>print(myList)</code> this would be printed to the console:
-            <code>['kuda', 'C++', 'python', 'ruby', 'perl']</code>
-            Another handy function is the sort() function. If I call <code>myList.sort()</code>, this will sort the elements of
-            myList into abc order.
-            Also, <code>myList.reverse()</code> is used to flip a list, like this!
-            {% call utils.code('python') %}
-            myList = ['python', 'java','c sharp', 'ruby', 'perl']
-            >>>myList.sort()
-            ['c sharp', 'java','perl', 'python', 'ruby']
-            >>>print(myList)
-            ['c sharp', 'java', 'perl', 'python', 'ruby']
-            >>>myList.reverse()
-            ['ruby', 'python', 'perl', 'java', 'c sharp']
-            {% endcall %}
+{% extends "layout/lesson.html" %} {% import "layout/utils.html" as utils %} {% block title %}Lesson 1{% endblock %} {% block lesson_title %}Lesson 1{% endblock %} {% block sections %} {% call section('types', 'Lists') %}
+<h2>Lists</h2>
+<p>
+    In python, we use lists to store multiple elements. In general, all elements in the lists must be of the same type. For syntax, we use brackets, <code>[</code> and <code>]</code> for lists. For example, take a look at this list declaration {% call
+    utils.code('python') %} myList = ["python", "java","c sharp", "ruby", "perl"] {% endcall %} This list, which I've decided to call myList, is a list of five strings. Notice that I don't have to write (and should not write)
+    <code>list myList = ['python', 'java','c sharp', 'ruby', 'perl']</code><br> As you can see, my list has 5 elements. I can call len on myList to get the size of the list I've created. In this case <code>len(myList) == 5.</code><br><br> Now let's say
+    I want to add 'kuda' to myList. To do this, I use the append() function, like this:
+    <code>myList.append('kuda')</code> and the result is:
+    <code>['python', 'java','c sharp', 'ruby', 'perl', 'kuda']</code><br> But, let's say I want 'kuda' at the beginning of my list. To do this, append() won't help me. Instead, I'll have to use the insert() method. insert() takes two arguments. the index
+    where you want the new element to go, and then the element you want to add, like this!<br><br>
+    <code>myList.insert(0,'kuda')</code> This tells my Python program to add kuda to myList at index 0. The result is:
+    <code>['kuda','python', 'java','c sharp', 'ruby', 'perl']</code><br><br> 'kuda' is at index 0, and all other elements have been moved to the right(each element's index has been increased by 1)<br> Notice that I don't have to tell Python to make myList
+    bigger to make room for the new element 'kuda' that I'm adding. It knows to do this and takes care of it automatically. If I want to remove an element I use the function remove(). remove() takes one argument, the element that you want to take out
+    of the list. So, if I want to remove 'java' I'd write
+    <code>myList.remove('java')</code> then if I call <code>print(myList)</code> this would be printed to the console:
+    <code>['kuda', 'C++', 'python', 'ruby', 'perl']</code> Another handy function is the sort() function. If I call <code>myList.sort()</code>, this will sort the elements of myList into abc order. Also, <code>myList.reverse()</code> is used to flip a
+    list, like this! {% call utils.code('python') %} myList = ['python', 'java','c sharp', 'ruby', 'perl'] >>>myList.sort() ['c sharp', 'java','perl', 'python', 'ruby'] >>>print(myList) ['c sharp', 'java', 'perl', 'python', 'ruby'] >>>myList.reverse()
+    ['ruby', 'python', 'perl', 'java', 'c sharp'] {% endcall %}
 
 
-        </p>
-    {% endcall %}
+</p>
+{% endcall %} {% call section('if statements', 'If statements') %}
+<h2>If Statements</h2>
+<p>
+    In Python, there are times when we only what lines of code to execute some of the time -- not all the time. To control when lines of code run, we can use if statements. Let's look at some code to see how these if statements work!
+</p>
+<p>
+    {% call utils.code('python') %} myList = ['bills','dolphins','jets','patriots'] if (len(myList) == 4): print('This list has four elements') else: print('hello, world') Output >>> This list has four elements {% endcall %} So, why does the first statement
+    get printed, but not the second statement? Well, the first if statement evaluates to true, since myList does have a length of 4. Then, the code skips the else branch, since that branch only gets read if the if statement evaluates to false.
+</p>
+<br>
+<p>
+    Let's look at another example {% call utils.code('python') %} myList = ['bills','dolphins','jets','patriots'] if myList[3] == 'bills': print('bills are last') elif myList[3] == 'dolphins': print('dolphins are last') elif myList[3] == 'jets': print('jets
+    are last') else: print('patriots are last') Output >>> patriots are last {% endcall %} Why? This time, all of the if statements evaulate to false. So, none of the code in the if statements are executed. Instead, the else statement is executed.
+</p>
 
-    {% call section('if statements', 'If statements') %}
-        <h2>If Statements</h2>
-        <p>
-            In Python, there are times when we only what lines of code to execute some of the time -- not all the time.
-            To control when lines of code run, we can use if statements. Let's look at some code to see how these if statements work!
-        </p>
-        <p>
-            {% call utils.code('python') %}
-            myList = ['bills','dolphins','jets','patriots']
-            if (len(myList) == 4):
-                print('This list has four elements')
-            else:
-                print('hello, world')
-            Output >>> This list has four elements
-            {% endcall %}
-            So, why does the first statement get printed, but not the second statement? Well, the first if statement evaluates
-            to true, since myList does have a length of 4. Then, the code skips the else branch, since that branch only gets
-            read if the if statement evaluates to false.
-        </p>
-        <br>
-        <p>
-            Let's look at another example
-            {% call utils.code('python') %}
-            myList = ['bills','dolphins','jets','patriots']
-            if myList[3] == 'bills':
-                print('bills are last')
-            elif myList[3] == 'dolphins':
-                print('dolphins are last')
-            elif myList[3] == 'jets':
-                print('jets are last')
-            else:
-                print('patriots are last')
-            Output >>> patriots are last
-            {% endcall %}
-            Why? This time, all of the if statements evaulate to false. So, none of the code in the if statements are executed.
-            Instead, the else statement is executed.
-        </p>
+{% endcall %} {% call section('For loops', 'For loops') %}
+<h2>For Loops</h2>
+<p>
+    Sometimes we want to iterate over, or read each element in a list. To accomplish that, we use for loops, like this! {% call utils.code('python') %} myList = ['python', 'java','c sharp', 'ruby', 'perl'] for x in range(0,len(myList)): print(myList[x]) >>>
+    python >>> java >>> c sharp >>> ruby >>> perl {% endcall %} Here, the elements of myList get printed out, one at a time. This is because when we enter the loop we start with
+    <code>x = 0</code>, so we <code>print(myList[0])</code>. Then we re-enter the loop. This time <code>x=1</code> so we print <code>myList[1]</code>
+    <br> This process keeps going until x = 5. x is no longer in the range we specified!
+    <br><br> NOTE: in Python, the x in range loop is NOT inclusive. So, <code>for x in range (0,2)</code> will loop twice, when x is assigned to 0 and again when x is assigned to 1. <code>x=2</code> would not meet our loop conditions, so we would exit
+    the loop. Along the same lines, <code>len(myList) == 5</code> so when <code>x=5</code> we exit the loop {% endcall %} {# TODO: Modularize #} {% call section('quiz', 'Quiz') %}
+    <h2>Start Game!</h2>
 
-    {% endcall %}
-
-    {% call section('For loops', 'For loops') %}
-        <h2>For Loops</h2>
-        <p>
-            Sometimes we want to iterate over, or read each element in a list. To accomplish that, we use for loops, like this!
-        {% call utils.code('python') %}
-            myList = ['python', 'java','c sharp', 'ruby', 'perl']
-            for x in range(0,len(myList)):
-                print(myList[x])
-            >>> python
-            >>> java
-            >>> c sharp
-            >>> ruby
-            >>> perl
-        {% endcall %}
-        Here, the elements of myList get printed out, one at a time. This is because when we enter the loop we start with
-            <code>x = 0</code>, so we <code>print(myList[0])</code>. Then we re-enter the loop. This time <code>x=1</code> so we print <code>myList[1]</code>
-            <br>
-            This process keeps going until x = 5. x is no longer in the range we specified!
-            <br><br>
-            NOTE: in Python, the x in range loop
-            is NOT inclusive. So, <code>for x in range (0,2)</code> will loop twice, when x is assigned to 0 and again when x is assigned
-            to 1. <code>x=2</code> would not meet our loop conditions, so we would exit the loop. Along the same lines, <code>len(myList) == 5</code>
-            so when <code>x=5</code> we exit the loop
-
-    {% endcall %}
-
-    {# TODO: Modularize #}
-    {% call section('quiz', 'Quiz') %}
-        <h2>Start Game!</h2>
-
-        <section id="games">
+    <section id="games">
 
 
         <!-- When pressed, gameContainer will be reviled and timmer will start -->
@@ -138,6 +58,94 @@ For example, take a look at this list declaration
             <div class="container">
                 <!-- Print the question you're on -->
                 <p id="questionNumber"></p>
+
+                <div id="question0">
+                    <p>If you have a list in Python:</p>
+                    <p>list = ["Cory","Ben","Matt","Sai"]</p>
+
+                    <ul class="print">
+                        <li>print(list[1])</li>
+                        <li>print(list[0])</li>
+                        <li>print(list[3])</li>
+                        <li>print(list[2])</li>
+                    </ul>
+                    <p>What is the order of names printed?</p>
+
+                </div>
+
+                <div id="question1">
+                    <p>Given this list:</p>
+                    <p>list = [“Yankees”,”Red Sox”,”Orioles”, “Blue Jays”]</p>
+
+                    <ul class="codes">
+                        <li>list.sort()</li>
+                        <li>list.reverse()</li>
+                        <li>print(list)</li>
+                        <li>print(list[2])</li>
+                    </ul>
+                    <p>What is printed?</p>
+
+                </div>
+
+                <div id="question2">
+                    <p>Unscramble this line of code. The result should finish a program to guess the user’s age</p>
+                    <p>age = 22</p>
+                    <p>print(“Guess my age!”)</p>
+                    <p>guess = int(raw_input(“Guess:_______________”</p>
+
+                    <ul class="code">
+                        <li>!=</li>
+                        <li>age</li>
+                        <li></li>
+                        <li>print(list[2])</li>
+                    </ul>
+                    <p>Put these in order to create correct code</p>
+
+                </div>
+
+                <div id="question3">
+                    <p>list = [" red ",”green",”blue”]</p>
+
+                    <ul class="code">
+                        <li>list.append(“orange”)</li>
+                        <li>list.append(“yellow”)</li>
+                        <li>list.remove(“green”)</li>
+                        <li>print(list)</li>
+                    </ul>
+                    <p>What is printed</p>
+
+
+                </div>
+
+                <div id="question4">
+                    <p>list = [“salt”,”pepper”,”ketchup”]</p>
+                    <p>Unscramble the line to store the length of list into variable length</p>
+
+                    <ul class="code">
+                        <li>len</li>
+                        <li>length</li>
+                        <li>(list)</li>
+                        <li>=</li>
+                    </ul>
+                </div>
+
+                <div id="question5">
+                    <p>for x in in range (1,4)</p>
+                    <p>print i </p>
+                    <p>What is printed</p>
+
+                    <ul class="choices">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <p>What is the order of names printed?</p>
+
+                </div>
+
+
+
                 <div id="move">
                     <section class="drag-vehicle">
                         <ul class="carts">
@@ -176,15 +184,10 @@ For example, take a look at this list declaration
 
 
         </div>
-      </section>
+    </section>
 
-    {% endcall %}
-{% endblock %}
-
-{% block scripts %}
-    {{ super() }}
+    {% endcall %} {% endblock %} {% block scripts %} {{ super() }}
 
     <!-- Custom JavaScript for this theme -->
     <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css')}}">
-{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css')}}"> {% endblock %}

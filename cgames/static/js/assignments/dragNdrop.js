@@ -33,7 +33,7 @@ function showDiv() {
 }
 
 
-var qfolder = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
+var qfolder = ["q1", "q2", "q3", "q4", "q5", "q6"];
 
 var qCount = 0; // count of current question
 var html; // html to save the current state of the game
@@ -41,6 +41,11 @@ html = document.getElementById('gameContainer').innerHTML;
 
 // pick a ramdom img for vehicles
 function choosePic() {
+
+  if (qCount < 6){
+  document.getElementById("question" + qCount).style.display = "block";
+  }
+
   //Print the question you're on
   document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 10 ";
 
