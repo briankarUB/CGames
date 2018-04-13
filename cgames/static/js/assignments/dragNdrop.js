@@ -122,6 +122,16 @@ function next() {
         document.getElementById("nextButton").style.display = "none"; // turn next button unclickable
         document.getElementById("resetButton").style.display = "none";
         document.getElementById("score").innerHTML = "You time was " + end_time + "s";
+        document.getElementById("compare").innerHTML = "Compare how you stack up against other users: "
+        + '<a href="../leaderboard">Leaderboard</a>';
+
+        var name = prompt('What is your name?');
+
+        $.post('../submit_score', {
+            'name': name,
+            'quiz': 2,
+            'score': end_time * 10
+        });
       }
     } else {
       alert("Incorrect Order! Try again to move on");
