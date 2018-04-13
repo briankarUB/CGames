@@ -108,13 +108,29 @@ else {
   if (cat6) { $("#category6").show("slow"); points = points -1;};
   if (cat7) { $("#category7").show("slow"); points = points -1;};
   if (cat8) { $("#category8").show("slow"); points = points -1;};
-  if (cat9) { $("#category9").show("slow"); };
-  if (cat10) { $("#category10").show("slow"); };
+  if (cat9) { $("#category9").show("slow"); points = points -1;};
+  if (cat10) { $("#category10").show("slow"); points = points -1;};
   if (cat11) { $("#category11").show("slow"); };
   { $("#closing").show("slow"); };
   // window.alert("You Score is " + (points *10) + " and your time was " + t + "s");
   document.getElementById("score").innerHTML = "Your Score is " + (points *10) + " out of 100 and your time was " + end_time + "s";
-  document.getElementById("compare").innerHTML = "Compare how you stack up against other users: Coming soon!";
+  document.getElementById("compare").innerHTML = "Compare how you stack up against other users: "
+  + '<a href="../leaderboard">Leaderboard</a>';
+
+  var x = document.getElementById("results");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+
+    var name = prompt('What is your name?');
+
+    $.post('../submit_score', {
+        'name': name,
+        'quiz': 1,
+        'score': points * 10
+    });
 }
     });
   });

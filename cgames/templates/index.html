@@ -2,13 +2,139 @@
 {% block title %}Home{% endblock %}
 {% block content %}
     <div class="jumbotron">
-        <h1 class="display-4">Welcome to CGames</h1>
-        <p class="lead">
+        <h1 class="text-center display-4">Welcome to CGames</h1>
+        <p class="lead text-center">
             A place to learn how to code Python that feels like playing a game.
         </p>
-        <hr class="my-4">
-        <p>
-            <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
-        </p>
+        <hr class="my-4 text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <p class="m-10">
+                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
+                  <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
     </div>
+    <section id="beta" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>Beta Release</h2>
+            <p>
+              CGames is now in beta!! Help us out by submitting any issues
+              to our github issues page here!
+            </p>
+            <p>
+              <a href="https://github.com/briankarUB/CGames/issues"  role="button">Github Issues</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    <section id="learn" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <br>
+            <h2>What is CGames</h2>
+            <p>
+              Learning to code is something many people want to do nowadays.
+              However, reading through pages of documentation can be a bit
+              intimidating and boring. CGames is here to help. CGames' goal
+              is to teach first time coding students Python3 with short
+              lessons, fun activities, and a leaderboard to track progress.
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="learn2" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <br>
+            <h2>What We Teach</h2>
+            <p>
+              The CGames lessons cover basic coding conventions, python's built-in
+              functionality, and much more!
+            </p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="learn3" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>How We Teach It</h2>
+            <p>
+              CGames teaches using short lessons. At the end of each lesson, activities are used to reinforce the
+              lessons in a fun, challenging way.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="learn4" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <br>
+              <h2>Why Choose Us</h2>
+              <p>
+                CGames uses the same information that most python
+                tutorials have, so why should a user choose to learn from our service? First, we
+                believe that short lessons are key to make users feel acomplished.
+                Then, paired with fun activities, the user can truly understand
+                what their code does. The Leaderboard allows the users to see how his/her progress
+                compares to other users, adding an extra competitive edge.
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="learn3" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h2>How To Get Started</h2>
+              <p>
+                To start lesson one, just click the get started button at the
+                top of the page or below. Enjoy your first CGames lessons!
+              </p>
+              <p>
+                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+
+  </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0  text-white">Copyright &copy; CGames 2018</p>
+      </div>
+      <br>
+      <div class="container">
+        <p>
+          <a href="https://github.com/briankarUB/CGames"  role="button">Github</a>
+        </p>
+        <p>
+          <a href="https://gitter.im/CGames_CSE442/Lobby"  role="button">Chat On Gitter</a>
+        </p>
+
+      <!-- /.container -->
+    </footer>
+
+
 {% endblock %}
