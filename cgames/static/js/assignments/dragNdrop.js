@@ -47,7 +47,7 @@ function choosePic() {
   }
 
   //Print the question you're on
-  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 10 ";
+  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 6";
 
   //go through different question by folder when ever user clicks next
   var folderName = qfolder[qCount];
