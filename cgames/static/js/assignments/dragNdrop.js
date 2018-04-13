@@ -33,7 +33,7 @@ function showDiv() {
 }
 
 
-var qfolder = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
+var qfolder = ["q1", "q2", "q3", "q4", "q5", "q6"];
 
 var qCount = 0; // count of current question
 var html; // html to save the current state of the game
@@ -41,8 +41,13 @@ html = document.getElementById('gameContainer').innerHTML;
 
 // pick a ramdom img for vehicles
 function choosePic() {
+
+  if (qCount < 6){
+  document.getElementById("question" + qCount).style.display = "block";
+  }
+
   //Print the question you're on
-  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 10 ";
+  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 6";
 
   //go through different question by folder when ever user clicks next
   var folderName = qfolder[qCount];
@@ -117,6 +122,17 @@ function next() {
         document.getElementById("nextButton").style.display = "none"; // turn next button unclickable
         document.getElementById("resetButton").style.display = "none";
         document.getElementById("score").innerHTML = "You time was " + end_time + "s";
+        document.getElementById("compare").innerHTML = "Compare how you stack up against other users: "
+        + '<a href="../leaderboard">Leaderboard</a>';
+
+        var name = prompt('What is your name?');
+
+        $.post('../submit_score', {
+            'name': name,
+            'quiz': 2,
+            'score': end_time / 20
+            // this multiplier is Incomplete
+        });
       }
     } else {
       alert("Incorrect Order! Try again to move on");
