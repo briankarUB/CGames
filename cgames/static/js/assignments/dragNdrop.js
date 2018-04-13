@@ -130,7 +130,8 @@ function next() {
         $.post('../submit_score', {
             'name': name,
             'quiz': 2,
-            'score': end_time * 10
+            'score': end_time / 20
+            // this multiplier is Incomplete
         });
       }
     } else {
