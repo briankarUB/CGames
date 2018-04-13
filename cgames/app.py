@@ -13,6 +13,14 @@ app.jinja_env.filters['dedent'] = lambda s: textwrap.dedent(s.lstrip('\n'))
 board = {}
 
 
+def next_lesson():
+    *_, n = request.path.rpartition('/')
+    return int(n) + 1
+
+
+app.jinja_env.globals.update(next_lesson=next_lesson)
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
