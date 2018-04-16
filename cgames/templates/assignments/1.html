@@ -168,7 +168,11 @@
 
         <div id="showQuestions">
 
-            <p class="question">1. What is the type of the variable x in the following code?<br> x = 7 </p>
+            <p class="question">1. What is the type of the variable x in the following code?<br>
+              {% call utils.code('python') %}
+                >>> x = 7
+              {% endcall %}
+            </p>
 
             <ul class="answers">
                 <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Int</label><br />
@@ -178,7 +182,12 @@
             </ul>
 
 
-            <p class="question">2. What is the value of y in the following code?<br> x = True<br> z = False<br> y = x or z
+            <p class="question">2. What is the value of y in the following code?<br>
+                {% call utils.code('python') %}
+                  >>> x = True
+                  >>> z = False
+                  >>> y = x or z
+                {% endcall %}
             </p>
 
             <ul class="answers">
@@ -188,8 +197,14 @@
                 <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">None</label><br />
             </ul>
 
-            <p class="question">3. What is the output of the following code?<br> x = "Python"<br> y = x[2]<br> print(y)
-                <br></p>
+            <p class="question">3. What is the output of the following code?<br>
+                {% call utils.code('python') %}
+                  >>> x = "Python"
+                  >>> y = x[2]
+                  >>> print(y)
+
+                 {% endcall %}
+            </p>
 
             <ul class="answers">
                 <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">'P'</label><br />
@@ -198,8 +213,13 @@
                 <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">'h'</label><br />
             </ul>
 
-            <p class="question">4. How about this code...What will it print?<br> a = "Java" b = a[-4]<br> print(b)
-                <br></p>
+            <p class="question">4. How about this code...What will it print?<br>
+              {% call utils.code('python') %}
+                >>> a = "Java"
+                >>> b = a[-4]
+                >>> print(b)
+              {% endcall %}
+            </p>
 
             <ul class="answers">
                 <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">'v'</label><br />
@@ -208,7 +228,12 @@
                 <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">'J'</label><br />
             </ul>
 
-            <p class="question">5. In the code below, what is the type of variable z?<br> x = 35<br> y = 5<br> z = x * y
+            <p class="question">5. In the code below, what is the type of variable z?<br>
+                {% call utils.code('python') %}
+                  >>> x = 35
+                  >>> y = 5
+                  >>> z = x * y
+                {% endcall %}
             </p>
 
             <ul class="answers">
@@ -218,7 +243,12 @@
                 <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Bool</label><br />
             </ul>
 
-            <p class="question">6. How about now...what is the type of variable z?<br> x = 35<br> y = 5<br> z = x/y
+            <p class="question">6. How about now...what is the type of variable z?<br>
+                {% call utils.code('python') %}
+                  >>> x = 35
+                  >>> y = 5
+                  >>> z = x/y
+                {% endcall %}
             </p>
 
             <ul class="answers">
@@ -237,7 +267,13 @@
                 <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">while</label><br />
             </ul>
 
-            <p class="question">8. What are the values of a and b, based on the code below?<br> x = 27<br> y = 7<br> a = x//y<br> b = x % y
+            <p class="question">8. What are the values of a and b, based on the code below?<br>
+                {% call utils.code('python') %}
+                  >>> x = 27
+                  >>> y = 7
+                  >>> a = x//y
+                  >>> b = x % y
+                {% endcall %}
             </p>
 
             <ul class="answers">
@@ -247,7 +283,13 @@
                 <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">a is 3, b is 6</label><br />
             </ul>
 
-            <p class="question">9. What is the result of the following code?<br> s = 25<br> p = 5<br> t = s/(p*p)<br> print(t)
+            <p class="question">9. What is the result of the following code?<br>
+                {% call utils.code('python') %}
+                  >>> s = 25
+                  >>> p = 5
+                  >>>  t = s/(p*p)
+                  >>> print(t)
+                {% endcall %}
             </p>
 
             <ul class="answers">
@@ -257,7 +299,12 @@
                 <input type="radio" name="q9" value="d" id="q9d"><label for="q9d">25</label><br />
             </ul>
 
-            <p class="question">10. Now, this code has been slightly changed -- what is the result?<br> s = 25<br> p = 5<br> t = (s/p)*p
+            <p class="question">10. Now, this code has been slightly changed -- what is the result?<br>
+                {% call utils.code('python') %}
+                   >>> s = 25
+                   >>> p = 5
+                   >>> t = (s/p)*p
+                {% endcall %}
             </p>
 
             <ul class="answers">
