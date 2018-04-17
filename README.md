@@ -14,11 +14,10 @@ https://www.youtube.com/watch?v=gKoA1O_O3Zs
 ## Summary
 
 ### User story
-I want a way to learn a programming language that is fun and feels like
-playing a game.
+I want a way to learn a programming language that is more simple than existing manuals and reinforced through activities to guage my progress.
 
 ### Minimal Viable Product (MVP)
-We want the user to be able to press a button and then enter a game where
+We want the user to be able to press a button and then enter an activity where
 questions are asked regarding different python coding concepts. The user is
 rewarded for correct answers and can proceed to the next part of the game upon
 meeting a minimum point requirement. We want to incorporate a global
