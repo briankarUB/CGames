@@ -10,10 +10,13 @@
 
 {% block content %}
     <h1>This is the CGames leaderboard page!</h1>
-    <table>
+    <table border="2" cellspacing="5" cellpadding="5">
+        <tr>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
         {% for name, scores in leaderboard.items() %}
         <tr>
-
         <td>{{ name }}</td>
         <td>{{ scores.values() | sum }}</td>
       </tr>
