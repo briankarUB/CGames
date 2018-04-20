@@ -40,7 +40,7 @@ def leaderboard():
 def submit_score():
     print(request.form)
 
-    name = request.form['name']
+    name = request.form['name'][0:10]
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
 
