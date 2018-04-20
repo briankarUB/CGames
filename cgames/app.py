@@ -44,16 +44,23 @@ def submit_score():
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
 
-    if not (score in range(0, 101) and quiz in range(1, 2)):
-        print('nice try')
-        return "Nice try", 403
-
     player_scores = board.get(name, {})
     player_scores.update({quiz: score})
-    board.update({name: player_scores})
+
+    quizfile = 'cgames/templates/assignments/{!s}.html'.format(quiz) #where quizzes are it can be varied if you run it on server. This is based on address of run.bat in my local#
+    if os.path.isfile(quizfile) and score in range(0, 101):
+        #check whether name is in leaderboard
+        for original in list(board.keys()): #find name in leaderboard
+            if original.lower() == name.lower():
+                board.update({original: player_scores})
+                return 'Scored!', 200
+        else:
+            board.update({name: player_scores})
+    else :
+        return "Nice try", 403
 
     print(board)
-    return '', 200
+    return 'Scored!', 200
 
 
 @app.route('/assignments/<int:n>')
