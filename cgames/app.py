@@ -44,7 +44,7 @@ def submit_score():
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
 
-    if not (score in range(0, 101) and quiz in range(1, 2)):
+    if not (score in range(0, 201) and quiz in range(1, 2)):
         print('nice try')
         return "Nice try", 403
 
