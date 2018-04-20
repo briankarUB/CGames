@@ -100,6 +100,74 @@ else {
   $("#categorylist").text(catStr);
   $("#categorylist").show("slow");
 
+  var mulPoint = 0.0;
+
+  if (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10){
+      mulPoint = mulPoint + 2.0;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.9;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8) ||
+    (!cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.8;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7) ||
+    (!cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8) ||
+    (!cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.7;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6) ||
+    (!cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7) ||
+    (!cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8) ||
+    (!cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.6;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4 && !cat5) ||
+    (!cat2 && !cat3 && !cat4 && !cat5 && !cat6) ||
+    (!cat3 && !cat4 && !cat5 && !cat6 && !cat7) ||
+    (!cat4 && !cat5 && !cat6 && !cat7 && !cat8) ||
+    (!cat5 && !cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat6 && !cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.5;
+  } else if ((!cat1 && !cat2 && !cat3 && !cat4) ||
+    (!cat2 && !cat3 && !cat4 && !cat5) ||
+    (!cat3 && !cat4 && !cat5 && !cat6) ||
+    (!cat4 && !cat5 && !cat6 && !cat7) ||
+    (!cat5 && !cat6 && !cat7 && !cat8) ||
+    (!cat6 && !cat7 && !cat8 && !cat9) ||
+    (!cat7 && !cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.4;
+  } else if ((!cat1 && !cat2 && !cat3) ||
+    (!cat2 && !cat3 && !cat4) ||
+    (!cat3 && !cat4 && !cat5) ||
+    (!cat6 && !cat7 && !cat8) ||
+    (!cat4 && !cat5 && !cat6) ||
+    (!cat5 && !cat6 && !cat7) ||
+    (!cat7 && !cat8 && !cat9) ||
+    (!cat8 && !cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.3;
+  } else if ((!cat1 && !cat2) ||
+    (!cat2 && !cat3) ||
+    (!cat3 && !cat4) ||
+    (!cat4 && !cat5) ||
+    (!cat5 && !cat6) ||
+    (!cat6 && !cat7) ||
+    (!cat7 && !cat8) ||
+    (!cat8 && !cat9) ||
+    (!cat9 && !cat10)
+  ){
+      mulPoint = mulPoint + 1.2;
+  } else {
+      mulPoint = mulPoint + 1.0;
+  }
+
   if (cat1) { $("#category1").show("slow"); points = points -1;};
   if (cat2) { $("#category2").show("slow"); points = points -1;};
   if (cat3) { $("#category3").show("slow"); points = points -1;};
@@ -113,7 +181,7 @@ else {
   if (cat11) { $("#category11").show("slow"); };
   { $("#closing").show("slow"); };
   // window.alert("You Score is " + (points *10) + " and your time was " + t + "s");
-  document.getElementById("score").innerHTML = "Your Score is " + (points *10) + " out of 100 and your time was " + end_time + "s";
+  document.getElementById("score").innerHTML = "Your Score is " + (points *10 * mulPoint) + " out of 100 and your time was " + end_time + "s";
   document.getElementById("compare").innerHTML = "Compare how you stack up against other users: "
   + '<a href="../leaderboard">Leaderboard</a>';
 
@@ -129,7 +197,7 @@ else {
     $.post('../submit_score', {
         'name': name,
         'quiz': 1,
-        'score': points * 10
+        'score': points * 10 * mulPoint
     });
 }
     });
