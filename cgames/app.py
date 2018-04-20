@@ -43,10 +43,7 @@ def submit_score():
     name = request.form['name']
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
-    """
-    if not (score in range(0, 101) and quiz in range(1, 2)):
-        print('nice try')
-        return "Nice try", 403"""
+
     player_scores = board.get(name, {})
     player_scores.update({quiz: score})
 
