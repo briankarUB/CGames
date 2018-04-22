@@ -19,9 +19,8 @@ I want a way to learn a programming language that is more simple than existing m
 ### Minimal Viable Product (MVP)
 We want the user to be able to press a button and then enter an activity where
 questions are asked regarding different python coding concepts. The user is
-rewarded for correct answers and can proceed to the next part of the game upon
-meeting a minimum point requirement. We want to incorporate a global
-leaderboard so the user can compare scores with other users.
+rewarded for correct answers and can select which lessons to complete.
+We want to incorporate a global leaderboard so the user can compare scores with other users.
 
 ### Add-on features
 1. Globe feature where each continent represents a different concept in Python
