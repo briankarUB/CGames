@@ -1,36 +1,142 @@
-{% extends "layout/lesson.html" %} {% import "layout/utils.html" as utils %} {% block title %}Lesson 2{% endblock %} {% block lesson_title %}Lesson 2{% endblock %} {% block sections %} {% call section('types', 'Lists') %}
-<h2>Lists</h2>
-<p>
-    In python, we use lists to store multiple elements. In general, all elements in the lists must be of the same type. For syntax, we use brackets, <code>[</code> and <code>]</code> for lists. For example, take a look at this list declaration {% call
-    utils.code('python') %} myList = ["python", "java","c sharp", "ruby", "perl"] {% endcall %} This list, which I've decided to call myList, is a list of five strings. Notice that I don't have to write (and should not write)
-    <code>list myList = ['python', 'java','c sharp', 'ruby', 'perl']</code><br> As you can see, my list has 5 elements. I can call len on myList to get the size of the list I've created. In this case <code>len(myList) == 5.</code><br><br> Now let's say
-    I want to add 'kuda' to myList. To do this, I use the append() function, like this:
-    <code>myList.append('kuda')</code> and the result is:
-    <code>['python', 'java','c sharp', 'ruby', 'perl', 'kuda']</code><br> But, let's say I want 'kuda' at the beginning of my list. To do this, append() won't help me. Instead, I'll have to use the insert() method. insert() takes two arguments. the index
-    where you want the new element to go, and then the element you want to add, like this!<br><br>
-    <code>myList.insert(0,'kuda')</code> This tells my Python program to add kuda to myList at index 0. The result is:
-    <code>['kuda','python', 'java','c sharp', 'ruby', 'perl']</code><br><br> 'kuda' is at index 0, and all other elements have been moved to the right(each element's index has been increased by 1)<br> Notice that I don't have to tell Python to make myList
-    bigger to make room for the new element 'kuda' that I'm adding. It knows to do this and takes care of it automatically. If I want to remove an element I use the function remove(). remove() takes one argument, the element that you want to take out
-    of the list. So, if I want to remove 'java' I'd write
-    <code>myList.remove('java')</code> then if I call <code>print(myList)</code> this would be printed to the console:
-    <code>['kuda', 'C++', 'python', 'ruby', 'perl']</code> Another handy function is the sort() function. If I call <code>myList.sort()</code>, this will sort the elements of myList into abc order. Also, <code>myList.reverse()</code> is used to flip a
-    list, like this! {% call utils.code('python') %} myList = ['python', 'java','c sharp', 'ruby', 'perl'] >>>myList.sort() ['c sharp', 'java','perl', 'python', 'ruby'] >>>print(myList) ['c sharp', 'java', 'perl', 'python', 'ruby'] >>>myList.reverse()
-    ['ruby', 'python', 'perl', 'java', 'c sharp'] {% endcall %}
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 2{% endblock %}
+{% block lesson_title %}Lesson 2{% endblock %}
+{% block sections %}
+    {% call section('types', 'Lists') %}
+        <h2>Lists</h2>
+        <p>
+            In python, we use lists to store multiple elements. In general,
+            all elements in the lists must be of the same type. For syntax,
+            we use brackets: <code>[</code> and <code>]</code> for lists.
+            For example, take a look at this list declaration
 
+            {% call utils.code('python') %}
+                myList = ['python', 'java', 'c sharp', 'ruby', 'perl']
+            {% endcall %}
 
-</p>
-{% endcall %} {% call section('if statements', 'If statements') %}
-<h2>If Statements</h2>
-<p>
-    In Python, there are times when we only what lines of code to execute some of the time -- not all the time. To control when lines of code run, we can use if statements. Let's look at some code to see how these if statements work!
-</p>
-<p>
-    {% call utils.code('python') %} myList = ['bills','dolphins','jets','patriots'] if (len(myList) == 4): print('This list has four elements') else: print('hello, world') Output >>> This list has four elements {% endcall %} So, why does the first statement
-    get printed, but not the second statement? Well, the first if statement evaluates to true, since myList does have a length of 4. Then, the code skips the else branch, since that branch only gets read if the if statement evaluates to false.
-</p>
-<br>
-<p>
-    Let's look at another example {% call utils.code('python') %} myList = ['bills','dolphins','jets','patriots'] if myList[3] == 'bills': print('bills are last') elif myList[3] == 'dolphins': print('dolphins are last') elif myList[3] == 'jets': print('jets
+            This list, which I've decided to call myList, is a list of five
+            strings. Notice that I don't have to write (and cannot write)
+            {% call utils.code('python') %}
+                list myList = ['python', 'java', 'c sharp', 'ruby', 'perl']
+            {% endcall %}
+
+            As you can see, my list has 5 elements. I can call len on myList
+            to get the size of the list I've created. In this case
+            <code>len(myList) == 5.</code>
+        </p>
+
+        <p>
+            Now let's say I want to add <code>'kuda'</code> to myList.
+            To do this, I use the <code>append()</code> function, like this:
+
+            {% call utils.code('python') %}
+                myList.append('kuda')
+            {% endcall %}
+
+            and the result is:
+
+            {% call utils.code('python') %}
+                ['python', 'java', 'c sharp', 'ruby', 'perl', 'kuda']
+            {% endcall %}
+        </p>
+
+        <p>
+            But, let's say I want 'kuda' at the beginning of my list.
+            To do this, <code>append()</code> won't help me. Instead, I'll
+            have to use the <code>insert()</code> method. <code>insert()</code>
+            takes two arguments: the index where you want the new element to go
+            and the element you want to add. Watch!
+
+            {% call utils.code('python') %}
+                myList.insert(0, 'kuda')
+            {% endcall %}
+
+            This tells Python to add <code>'kuda'</code> to <code>myList</code>
+            at index <code>0</code>. The result is instead:
+
+            {% call utils.code('python') %}
+                ['kuda', 'python', 'java', 'c sharp', 'ruby', 'perl']
+            {% endcall %}
+
+            <code>'kuda'</code> is at index <code>0</code>, and all other
+            elements have been moved to the right (i.e., the index of every
+            other element has been increased by <code>1</code>).
+        </p>
+        <p>
+            Notice that I don't have to tell Python to make <code>myList</code>
+            bigger to make room to add <code>'kuda'</code>. It knows to do this
+            and takes care of it automatically.
+
+        </p>
+
+        <p>
+            If I want to remove an element, I use the function
+            <code>remove()</code>. <code>remove()</code> takes one argument:
+            the element that you want to remove of the list. So, if I want to
+            remove <code>'java'</code>, I'd write:
+
+            {% call utils.code('python') %}
+                myList.remove('java')
+            {% endcall %}
+
+            Then, if I call <code>print(myList)</code>, this would print to
+            the console:
+
+            {% call utils.code('python') %}
+                ['kuda', 'C++', 'python', 'ruby', 'perl']
+            {% endcall %}
+        </p>
+
+        <p>
+            Another handy function is the <code>sort()</code> function.
+            If I call <code>myList.sort()</code>, this will sort the elements
+            of <code>myList</code> in alphabetical order. In similar fashion,
+            <code>reverse()</code> can be used to reverse a list. Check it out:
+
+            {% call utils.code('python') %}
+                >>> myList.sort()
+                >>> print(myList)
+                ['c sharp', 'java', 'perl', 'python', 'ruby']
+
+                >>> myList.reverse()
+                >>> print(myList)
+                ['ruby', 'python', 'perl', 'java', 'c sharp']
+            {% endcall %}
+        </p>
+    {% endcall %}
+
+    {% call section('if statements', 'If statements') %}
+        <h2>If Statements</h2>
+        <p>
+            In Python, there are times when we only want certain code to
+            execute only some of the time. To control when code runs, we can
+            use if statements. Let's look at some code to see how these work!
+
+            {% call utils.code('python') %}
+                >>> myList = ['bills', 'dolphins', 'jets', 'patriots']
+                >>> if len(myList) == 4:
+                ...     print('This list has four elements.')
+                ... else:
+                ...     print('Hello, world')
+                This list has four elements.
+            {% endcall %}
+        </p>
+
+        <p>
+            So, why does the third line run, but not the fifth line?
+            Well, the first if statement evaluates to <code>True</code>,
+            since <code>myList</code> <em>does</em> have a length of
+            <code>4</code>. Then, Python skips the <code>else</code> ,
+            since it only runs if the previous if statement evaluates
+            to <code>False</code>.
+        </p>
+
+        <p>
+            Let's look at another example:
+
+            {% call utils.code('python') %}
+                myList = ['bills','dolphins','jets','patriots'] if myList[3] == 'bills': print('bills are last') elif myList[3] == 'dolphins': print('dolphins are last') elif myList[3] == 'jets': print('jets
     are last') else: print('patriots are last') Output >>> patriots are last {% endcall %} Why? This time, all of the if statements evaulate to false. So, none of the code in the if statements are executed. Instead, the else statement is executed.
 </p>
 
@@ -74,17 +180,13 @@
                 </div>
 
                 <div id="question1">
-                    <p>Given this list:</p>
-                    <p>list = [“Yankees”,”Red Sox”,”Orioles”, “Blue Jays”]</p>
-
-                    <ul class="codes">
-                        <li>list.sort()</li>
-                        <li>list.reverse()</li>
-                        <li>print(list)</li>
-                        <li>print(list[2])</li>
-                    </ul>
-                    <p>What is printed?</p>
-
+                    <p>Given this code, what gets printed?</p>
+                    {% call utils.code('python') %}
+                        l = ['Yankeed', 'Red Sox', 'Orioles', 'Blue Jays']
+                        l.sort()
+                        l.reverse()
+                        print(list)
+                    {% endcall %}
                 </div>
 
                 <div id="question2">
@@ -186,8 +288,12 @@
         </div>
     </section>
 
-    {% endcall %} {% endblock %} {% block scripts %} {{ super() }}
+    {% endcall %} {% endblock %}
 
-    <!-- Custom JavaScript for this theme -->
-    <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css')}}"> {% endblock %}
+    {% block scripts %}
+        {{ super() }}
+
+        <!-- Custom JavaScript for this theme -->
+        <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
+    {% endblock %}
