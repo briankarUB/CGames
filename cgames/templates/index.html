@@ -11,8 +11,17 @@
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <p class="m-10">
-                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
-                  <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
+                 <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Get Started
+                    </button>
+                    <div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
+                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=2) }}">Lists</a>
+                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=3) }}">Loops</a>
+                    </div>
+                <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
+                </div>
               </p>
             </div>
           </div>
@@ -132,9 +141,10 @@
         <p>
           <a href="https://gitter.im/CGames_CSE442/Lobby"  role="button">Chat On Gitter</a>
         </p>
+      </div>
 
       <!-- /.container -->
     </footer>
-
-
 {% endblock %}
+
+
