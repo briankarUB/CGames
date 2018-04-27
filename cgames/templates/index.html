@@ -11,7 +11,16 @@
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <p class="m-10">
-                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
+                 <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Get Started
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
+                        <a href="{{ url_for('assignment_page', n=2) }}">Lists</a>
+                        <a href="{{ url_for('assignment_page', n=3) }}">Loops</a>
+                    </div>
+                </div>
                   <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
               </p>
             </div>
@@ -132,9 +141,14 @@
         <p>
           <a href="https://gitter.im/CGames_CSE442/Lobby"  role="button">Chat On Gitter</a>
         </p>
+      </div>
 
       <!-- /.container -->
     </footer>
 
-
+<!-- Custom JavaScript for this theme -->
+    <script src="{{ url_for('static', filename='js/lesson-dropdown.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style3.css')}}">
 {% endblock %}
+
+
