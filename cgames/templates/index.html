@@ -11,17 +11,17 @@
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <p class="m-10">
-                  <div class="dropdown">
-                    <button onclick="myFunction()"
-                  class="btn btn-primary" role="button">Get Started</button>
+                 <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Get Started
+                    </button>
                     <div id="myDropdown" class="dropdown-content">
                         <a href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
                         <a href="{{ url_for('assignment_page', n=2) }}">Lists</a>
                         <a href="{{ url_for('assignment_page', n=3) }}">Loops</a>
                     </div>
-                  </div>
+                </div>
                   <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
-
               </p>
             </div>
           </div>
