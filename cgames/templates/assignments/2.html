@@ -111,7 +111,8 @@
         <p>
             In Python, there are times when we only want certain code to
             execute only some of the time. To control when code runs, we can
-            use if statements. Let's look at some code to see how these work!
+            use <code>if</code> statements. Let's look at some code to see
+            how these work!
 
             {% call utils.code('python') %}
                 >>> myList = ['bills', 'dolphins', 'jets', 'patriots']
@@ -125,11 +126,11 @@
 
         <p>
             So, why does the third line run, but not the fifth line?
-            Well, the first if statement evaluates to <code>True</code>,
-            since <code>myList</code> <em>does</em> have a length of
-            <code>4</code>. Then, Python skips the <code>else</code> ,
-            since it only runs if the previous if statement evaluates
-            to <code>False</code>.
+            Well, the first <code>if</code> statement evaluates to
+            <code>True</code>, since <code>myList</code> <em>does</em>
+            have a length of <code>4</code>. Then, Python skips the
+            <code>else</code>, since it only runs if the previous
+            <code>if</code> statement evaluates to <code>False</code>.
         </p>
 
         <p>
@@ -148,9 +149,10 @@
                 patriots are last
             {% endcall %}
 
-            Why? This time, all of the if statements evaulate to false.
-            So, none of the code in the if statements are executed.
-            Instead, the else statement is executed.
+            Why? This time, all of the <code>if</code> statements evaulate
+            to <code>False</code>. So, none of the code in the <code>if</code>
+            statements are executed. Instead, the <code>else</code> statement
+            is executed.
         </p>
     {% endcall %}
 
@@ -171,7 +173,7 @@
                 perl
             {% endcall %}
 
-            Here, the elements of myList get printed out, one at a time.
+            Here, the elements of <code>myList</code> get printed out, one at a time.
         </p>
     {% endcall %}
 
