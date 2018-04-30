@@ -10,17 +10,22 @@
 
 {% block content %}
     <h1>This is the CGames leaderboard page!</h1>
-    <table border="2" cellspacing="5" cellpadding="5">
+    <div class="mx-auto w-50 p-3">
+    <table class = "table table-primary" border="4" cellspacing="5" cellpadding="5">
+        <thead class = "thead-success" align="center">
         <tr>
             <th>Username</th>
             <th>Score</th>
         </tr>
+        </thead>
         {% for name, scores in leaderboard.items() %}
+        <tbody align = "center">
         <tr>
         <td>{{ name }}</td>
         <td>{{ scores.values() | sum }}</td>
-      </tr>
-      {% endfor %}
-
+        </tr>
+        {% endfor %}
+        </tbody>
     </table>
+    </div>
 {% endblock %}
