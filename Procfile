@@ -1,1 +1,1 @@
-web: gunicorn cgames.app:app
+web: gunicorn --workers=1 cgames.app:app
