@@ -21,7 +21,7 @@
 
             <tbody>
                 {% for name, score in leaderboard_items %}
-                    <tr>
+                    <tr class="{{'table-primary' if name == username}}">
                         <th scope="row">{{ loop.index }}</th>
                         <td>
                             {% if loop.first %}

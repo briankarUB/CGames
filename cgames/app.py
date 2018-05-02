@@ -1,6 +1,6 @@
 import os
 import textwrap
-from flask import Flask, abort, render_template, request
+from flask import Flask, abort, render_template, request, make_response
 from jinja2 import TemplateNotFound
 
 app = Flask(__name__)
@@ -35,8 +35,13 @@ def assignments():
 def leaderboard():
     summed_board = {k: sum(v.values()) for k, v in board.items()}
     items = sorted(summed_board.items(), key=lambda t: t[1], reverse=True)
+    username = request.cookies.get('username')
 
-    return render_template('leaderboard.html', leaderboard_items=items)
+    return render_template(
+        'leaderboard.html',
+        leaderboard_items=items,
+        username=username
+    )
 
 
 @app.route('/submit_score', methods=['POST'])
@@ -46,13 +51,15 @@ def submit_score():
     quiz = int(request.form['quiz'])
 
     if not (score in range(0, 101) and quiz in range(1, 4)):
-        return "Nice try", 403
+        return 'Nice try', 403
 
     player_scores = board.get(name, {})
     player_scores.update({quiz: score})
     board.update({name: player_scores})
 
-    return '', 200
+    resp = make_response('', 200)
+    resp.set_cookie('username', name)
+    return resp
 
 
 @app.route('/assignments/<int:n>')
