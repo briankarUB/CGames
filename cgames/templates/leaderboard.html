@@ -21,7 +21,15 @@
             <tbody align="center">
                 {% for name, score in leaderboard_items %}
                     <tr>
-                        <td>{{ name }}</td>
+                        <td>
+                            {% if loop.first %}
+                                <i class="material-icons" style="vertical-align: middle;">star</i>
+                                {{ name }}
+                                <i class="material-icons" style="vertical-align: middle;">star</i>
+                            {% else %}
+                                {{ name }}
+                            {% endif %}
+                        </td>
                         <td>{{ score }}</td>
                     </tr>
                 {% endfor %}
