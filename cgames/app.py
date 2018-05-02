@@ -33,7 +33,12 @@ def assignments():
 
 @app.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html', leaderboard=board)
+    summed_board = {k: sum(v.values()) for k, v in board.items()}
+    items = sorted(summed_board.items(), key=lambda t: t[1], reverse=True)
+
+    print(summed_board, items)
+
+    return render_template('leaderboard.html', leaderboard_items=items)
 
 
 @app.route('/submit_score', methods=['POST'])
