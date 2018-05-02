@@ -36,28 +36,22 @@ def leaderboard():
     summed_board = {k: sum(v.values()) for k, v in board.items()}
     items = sorted(summed_board.items(), key=lambda t: t[1], reverse=True)
 
-    print(summed_board, items)
-
     return render_template('leaderboard.html', leaderboard_items=items)
 
 
 @app.route('/submit_score', methods=['POST'])
 def submit_score():
-    print(request.form)
-
     name = request.form['name'][0:10]
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
 
     if not (score in range(0, 101) and quiz in range(1, 4)):
-        print('nice try')
         return "Nice try", 403
 
     player_scores = board.get(name, {})
     player_scores.update({quiz: score})
     board.update({name: player_scores})
 
-    print(board)
     return '', 200
 
 
