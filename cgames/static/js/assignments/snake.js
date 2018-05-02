@@ -26,7 +26,7 @@ function stopCount() {
 
 
 
-question1 loop
+// question1 loop
 var ans = [];
 var a = 0;
 while(a < 20){
@@ -167,7 +167,7 @@ function tick() {
     context.font = '20px serif';
     context.textAlign = 'center';
     context.fillText('GAME OVER! The correct print was ' + num, SIZE / 2, SIZE / 2);
-    document.getElementById("resetButton").style.display = "block";
+    document.getElementById("resetButton").style.display = "inline-block";
   } else if ((index > ans.length) && (qNum === 2)){ //when players finishs all the questions
     stopCount();
     document.getElementById("resetButton").style.display = "none";
@@ -196,11 +196,7 @@ function tick() {
     document.getElementById("c").style.display = "none";
     document.getElementById("moveON").style.display = "block";
 
-    // context.fillStyle = '#eee8d5';
-    // context.font = '30px serif';
-    // context.textAlign = 'center';
-    // context.fillText('Press next to move on!', SIZE / 2, SIZE / 2);
-    document.getElementById("nextButton").style.display = "inline-block";
+    document.getElementById("nextButton").style.display = "block";
 
     // turn all the candy to 0 when users gets to end of Array
 
