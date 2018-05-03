@@ -42,12 +42,12 @@ html = document.getElementById('gameContainer').innerHTML;
 // pick a ramdom img for vehicles
 function choosePic() {
 
-  if (qCount < 3){
+  if (qCount < 4){
   document.getElementById("question" + qCount).style.display = "block";
   }
 
   //Print the question you're on
-  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 6";
+  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 3";
 
   //go through different question by folder when ever user clicks next
   var folderName = qfolder[qCount];
