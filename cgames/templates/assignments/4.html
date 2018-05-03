@@ -1,0 +1,172 @@
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 4{% endblock %}
+{% block lesson_title %}Lesson 4{% endblock %}
+{% block sections %}
+    {% call section('random', 'Random') %}
+        <h2>Random</h2>
+        <p>
+          True random numbers are very challenging to generate with computers.
+          Python uses a Pseudorandom number generator to generate random numbers.
+          Pseudorandom number generators work by starting with a certain number,
+          then perform a complex calculation on that number to get a seemingly
+          random number. More info can be found <a href="https://docs.python.org/3/library/random.html">here.</a>
+        </p>
+        <p>
+          In Python, they way to access code from other files is to use import.
+          {% call utils.code('python') %}
+              import random*
+          {% endcall %}
+
+          This code imports every function from the random file in python.<br>
+        </p>
+        <p>
+          a (pseudo) random number between 0 and 1 can be generated with:
+
+          {% call utils.code('python') %}
+              import random*
+              print(random())
+          {% endcall %}
+        </p>
+
+    {% endcall %}
+
+    {% call section('int', 'Random Ints') %}
+        <h2>Random Ints</h2>
+        <p>
+          To generate a whole number between 1 and 100 use:
+            {% call utils.code('python') %}
+            import random*
+
+            print(randint(1,100))
+            {% endcall %}
+
+            This will print a random integer. If you want to store it in a variable you can use:
+            {% call utils.code('python') %}
+            import random*
+
+            x =randint(1,100)
+            {% endcall %}
+        </p>
+    {% endcall %}
+
+    {% call section('lists', 'Shuffle & Pick') %}
+        <h2>Shuffle & Pick</h2>
+        <p>
+          A list can be shuffled with this code:
+            {% call utils.code('python') %}
+            from random import *
+
+            items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            shuffle(items)
+
+            print(items)
+            {% endcall %}
+          To pick a random number from that list use:
+          {% call utils.code('python') %}
+          from random import *
+
+          items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+          print(sample(items,1)) #prints one random number from items
+
+          print(sample(items,4)) #prints four random numbers from items
+          {% endcall %}
+
+          <h1>the game here could easlily be the train game</h1>
+
+        </p>
+
+    {% endcall %}
+
+    {% call section('quiz', 'Quiz') %}
+        <h2>Start Game!</h2>
+
+        <section id="games">
+            <!-- When pressed, gameContainer will be reviled and timmer will start -->
+            <button onclick="showDiv()" id="startButton">start</button>
+
+            <div id="gameContainer">
+              <div>
+                Time: <span id="timerDisplay">0</span>s
+              </div>
+                <div class="container">
+                    <!-- Print the question you're on -->
+                    <p id="questionNumber"></p>
+
+                    <div id="question0">
+                        <p>what is the proper code to import random</p>
+                    </div>
+
+                    <div id="question1">
+                        <p>What is the proper order for the code missing?</p>
+                        {% call utils.code('python') %}
+                          #random number between 0 and 10
+                          import random*
+                          # CODE GOES Here
+                          print(r_int)
+                        {% endcall %}
+                    </div>
+
+                    <div id="question2">
+                        <p>What is the proper order for the code missing?</p>
+                        {% call utils.code('python') %}
+                        #select 8 random numbers from the list
+                        items = []
+                        for i in range(0,100):
+                          items.append(i)
+                        #YOUR CODE HERE
+                        print(y)
+                        {% endcall %}
+
+                        <p>Put these in order to create correct code.</p>
+                    </div>
+
+                    <div id="move">
+                        <section class="drag-vehicle">
+                            <ul class="carts">
+                                <li>
+                                    <img id="train" alt="train head" src="{{ url_for('static', filename='img1/temp1.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train1" alt="train body" src="{{ url_for('static', filename='img1/temp2.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train2" alt="train body" src="{{ url_for('static', filename='img1/temp3.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train3" alt="train tail" src="{{ url_for('static', filename='img1/temp4.jpg')}}">
+                                </li>
+                            </ul>
+                        </section>
+
+                        <div class="drop-boxs">
+                            <section class="drop-zone1"></section>
+                            <section class="drop-zone2"></section>
+                            <section class="drop-zone3"></section>
+                            <section class="drop-zone4"></section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- reset question button -->
+                <button onclick="reset()" id="resetButton">reset</button>
+
+                <!-- next question button -->
+                <button onclick="next()" id="nextButton">next</button>
+
+                <!-- print for score and time -->
+                <p id="score"></p>
+                <p id="compare"></p>
+            </div>
+        </section>
+    {% endcall %}
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='js/assignments/dragNdrop0.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 5{% endblock %}
+{% block lesson_title %}Lesson 5{% endblock %}
+{% block sections %}
+    {% call section('read', 'Read File') %}
+        <h2>Read File</h2>
+        <p>
+          Reading and writing to a file in python is super helpful and very simple.
+
+
+          {% call utils.code('python') %}
+          # Define a filename.
+          filename = "cgames.txt"
+
+          # Open the file as f.
+          # The function readlines() reads the file.
+          with open(filename) as f:
+              content = f.readlines()
+
+          # Show the file contents line by line.
+          # We added the comma to print single newlines and not double.
+          # This is because the lines contain the newline character '\n'.
+          for line in content:
+            print(line),
+
+          {% endcall %}
+          The first part of the code will read the file content. All of the lines read
+          will be stored in the variable content. The second part will iterate over
+          every line in the variable contents.
+        </p>
+        <p>
+          If you do not want to read the newline characters ‘\n’, you can change
+          the statement f.readlines() to this:
+
+          {% call utils.code('python') %}
+          content = f.read().splitlines()
+          {% endcall %}
+        </p>
+        <p>
+          While the codes above work, we should always test if the file we want
+          to open exists.  We will test first if the file does not exist, if it
+          does it will read the file else return an error. As in the code below:
+          {% call utils.code('python') %}
+          import os.path
+
+          # Define a filename.
+          filename = "cgames.txt"
+
+          if not os.path.isfile(filename):
+              print('File does not exist.')
+          else:
+              # Open the file as f.
+              # The function readlines() reads the file.
+              with open(filename) as f:
+                  content = f.read().splitlines()
+
+              # Show the file contents line by line.
+              # We added the comma to print single newlines and not newlines.
+              # This is because the lines contain the newline character '\n'.
+              for line in content:
+                  print(line)
+
+          {% endcall %}
+
+
+
+        </p>
+
+    {% endcall %}
+
+    {% call section('write', 'Write File') %}
+        <h2>Write File</h2>
+        <p>
+          The code below creates a new file (or overwrites) with the data.
+            {% call utils.code('python') %}
+            # Filename to write
+            filename = "cgames.txt"
+
+            # Open the file with writing permission
+            myfile = open(filename, 'w')
+
+            # Write a line to the file
+            myfile.write('Written with Python\n')
+
+            # Close the file
+            myfile.close()
+
+            {% endcall %}
+            The ‘w’ flag makes Python truncate the file if it already exists.
+            That is to say, if the file contents exists it will be replaced.
+
+        </p>
+        <h3>Append File</h3>
+        <p>
+          If you simply want to add content to the file you can use the ‘a’
+          parameter.
+          {% call utils.code('python') %}
+          # Filename to write
+          filename = "cgames.txt"
+
+          # Open the file with writing permission
+          myfile = open(filename, 'a')
+
+          # Write a line to the file
+          myfile.write('Written with Python\n')
+
+          # Close the file
+          myfile.close()
+
+          {% endcall %}
+
+
+        </p>
+    {% endcall %}
+    {% call section('parameters', 'Parameters') %}
+    <h2>Parameters</h2>
+    <p>
+      Here is a list of the parameters for open()
+
+      <table>
+        <tr>
+          <th>Flag</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>Open for reading</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>Open for writing (will truncate file)</td>
+        </tr>
+        <tr>
+          <td>b</td>
+          <td>binary mode</td>
+        </tr>
+        <tr>
+          <td>r+</td>
+          <td>open file for reading and writing</td>
+        </tr>
+        <tr>
+          <td>a+</td>
+          <td>open file for reading and writing (appends to end)</td>
+        </tr>
+        <tr>
+          <td>w+</td>
+          <td>open file for reading and writing (truncates files)</td>
+        </tr>
+      </table>
+    </p>
+    <h1> not sure what game here</h1>
+
+
+    {% endcall %}
+
+
+
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
+{% endblock %}
