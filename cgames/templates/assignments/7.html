@@ -1,0 +1,185 @@
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 5{% endblock %}
+{% block lesson_title %}Lesson 5{% endblock %}
+{% block sections %}
+{% call section('intro', 'Intro') %}
+    <h2>Intro to Objects</h2>
+    <p>
+      Python is an object oriented programming language, meaning that Classes
+      are used to create objects which have functions and variables. Strings are
+      examples of objects. A string named book, has the function book.replace()
+      and book.lowercase().
+      {% call utils.code('python') %}
+      book = "Moby Dick"
+      book.lowercase()
+      print(book)
+      {% endcall %}
+    </p>
+{% endcall %}
+{% call section('class', 'Class') %}
+    <h2>Classes in Python</h2>
+    <p>
+      Python can create virtual objects that can contian variables and methods.
+      An example:
+      {% call utils.code('python') %}
+      class User:
+        name =''
+        def __init__(self,name):
+          self.name = name
+
+        def sayHello(self):
+          print('hello ' + self.name)
+      {% endcall %}
+      Lets go through this example and break down each line
+
+    </p>
+    <p>
+      {% call utils.code('python') %}
+      class User:
+      {% endcall %}
+      is the class constructor. Just like the function constructor it starts with
+      class, then the classes assigned name then a colon.
+    </p>
+    <p>
+      When the class constructor is called, the contents of the class are run just like a function
+
+      {% call utils.code('python') %}
+        name = ""
+      {% endcall %}
+
+      sets a variable, name, to the empty string
+
+      {% call utils.code('python') %}
+        def __init__(self,name):
+      {% endcall %}
+      Here is where we get to the fun stuff. This is the initialization function.
+      This function is the first function to run when a new instance of the class is created.
+      It is like the functions we covered, with two inputs self and name.
+    </p>
+    <p>
+
+      We know that name is a string but what is self?
+    </p>
+    <p>
+      self is Python's way of a class referting to itself, hence the name.
+      {% call utils.code('python') %}
+          self.name = name
+      {% endcall %}
+
+      It is pretty easy to see in this example, self.name is assigned to the string,
+      name, that is passed in through the function.
+    </p>
+    <p>
+      If a name is not provided, self.name becomes the empty sting variable we assigned
+      earlier
+    </p>
+    <p>
+      {% call utils.code('python') %}
+      def sayHello(self):
+      {% endcall %}
+      Is another function header, same as what we have covered.
+      {% call utils.code('python') %}
+      print('hello ' + self.name)
+      {% endcall %}
+      Prints the string 'hello' and inputed name of the user.
+    </p>
+    <p>
+      And here is how to interact with this classes
+      {% call utils.code('python') %}
+      class User:
+          name = ""
+
+          def __init__(self, name):
+              self.name = name
+
+          def sayHello(self):
+              print 'hello' + self.name
+
+      # create virtual objects
+      james = User("James")
+      david = User("David")
+      eric = User("Eric")
+
+      # call methods owned by virtual objects
+      james.sayHello()
+      david.sayHello()
+
+      {% endcall %}
+      The output is:
+      {% call utils.code('python') %}
+        hello James
+        hello David
+      {% endcall %}
+
+
+    </p>
+{% endcall %}
+{% call section('cvar', 'Class Variables') %}
+    <h2>Class Variables</h2>
+    <p>
+      Classes can have functions that update the internal variables
+      {% call utils.code('python') %}
+      class User:
+        name =''
+        def __init__(self,name):
+          self.name = name
+          self.score = 0s
+
+        def sayHello(self):
+          print('hello ' + self.name)
+
+        def add_score(self):
+          self.score = self.score + 1
+
+        def min_score(self):
+          self.score = self.score - 1
+
+        def sayScore(self):
+          print(score)
+      {% endcall %}
+      Here I added an internal variable, score, that can be incremented or decremened
+      with add_score() and min_score()
+    </p>
+    <p>
+      Now lets put it all together!
+      {% call utils.code('python') %}
+      class User:
+        name =''
+        def __init__(self,name):
+          self.name = name
+          self.score = 0
+
+        def sayHello(self):
+          print('hello ' + self.name)
+
+        def add_score(self):
+          self.score = self.score + 1
+
+        def min_score(self):
+          self.score = self.score - 1
+
+        def sayScore(self):
+          print(score)
+
+      james = User('James')
+
+      for i in range(0,10):
+        james.add_score()
+
+      james.sayScore()
+      {% endcall %}
+      The output is then:
+      {% call utils.code('python') %}
+      10
+      {% endcall %}
+    </p>
+{% endcall %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
+{% endblock %}
