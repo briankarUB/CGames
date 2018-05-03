@@ -4,7 +4,7 @@ var timer_is_on = 0;
 var end_time = 0;
 
 function timedCount() {
-    // document.getElementById("txt").value = c;
+    document.getElementById("timerDisplay").innerText = c.toString();
     c = c + 1;
     t = setTimeout(function(){ timedCount() }, 1000);
 }

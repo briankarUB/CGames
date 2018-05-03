@@ -167,6 +167,9 @@
         <input type="button" id="startButton" name="answer" value="Start" onclick="showDiv()" />
 
         <div id="showQuestions">
+            <div>
+                Time: <span id="timerDisplay">0</span>s
+            </div>
 
             <p class="question">1. What is the type of <code>x</code> in the following code?<br>
               {% call utils.code('python') %}

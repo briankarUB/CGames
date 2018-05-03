@@ -4,7 +4,7 @@ var timer_is_on = 0;
 var end_time = 0;
 
 function timedCount() {
-  // document.getElementById("txt").value = c;
+  document.getElementById("timerDisplay").innerText = s.toString();
   s = s + 1;
   t = setTimeout(function() {
     timedCount()
@@ -311,5 +311,6 @@ function reset() {
       40: 2
     }[e.keyCode] || newDirection;
   };
+  s = 0;
 
 }
