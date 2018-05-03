@@ -50,7 +50,7 @@ def submit_score():
     score = int(request.form['score'])
     quiz = int(request.form['quiz'])
 
-    if not (score in range(0, 101) and quiz in range(1, 4)):
+    if not (score in range(0, 101) and quiz in range(1, 5)):
         return 'Nice try', 403
 
     player_scores = board.get(name, {})

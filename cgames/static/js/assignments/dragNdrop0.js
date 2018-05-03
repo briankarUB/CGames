@@ -135,7 +135,7 @@ function next() {
         }
         $.post('../submit_score', {
             'name': name,
-            'quiz': 2,
+            'quiz': 4,
             'score': score
             // this multiplier is Incomplete
         });
