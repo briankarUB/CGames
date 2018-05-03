@@ -1,31 +1,41 @@
 {% extends "layout/default.html" %}
 {% block title %}Leaderboard{% endblock %}
 {% block navbar_items %}
-<div class="collapse navbar-collapse" id="navbarResponsive">
-  <ul class="navbar-nav ml-auto">
-  </ul>
-</div>
-
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+    </div>
 {% endblock %}
 
 {% block content %}
     <h1>This is the CGames leaderboard page!</h1>
     <div class="mx-auto w-50 p-3">
-    <table class = "table table-primary" border="4" cellspacing="5" cellpadding="5">
-        <thead class = "thead-success" align="center">
-        <tr>
-            <th>Username</th>
-            <th>Score</th>
-        </tr>
-        </thead>
-        {% for name, scores in leaderboard.items() %}
-        <tbody align = "center">
-        <tr>
-        <td>{{ name }}</td>
-        <td>{{ scores.values() | sum }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for name, score in leaderboard_items %}
+                    <tr class="{{'table-primary' if name == username}}">
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>
+                            {% if loop.first %}
+                                <i class="material-icons" style="vertical-align: middle;">star</i>
+                                {{ name }}
+                                <i class="material-icons" style="vertical-align: middle;">star</i>
+                            {% else %}
+                                {{ name }}
+                            {% endif %}
+                        </td>
+                        <td>{{ score }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}
