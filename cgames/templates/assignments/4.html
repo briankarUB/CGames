@@ -76,6 +76,92 @@
           <h1>the game here could easlily be the train game</h1>
 
         </p>
+
+    {% endcall %}
+
+    {% call section('quiz', 'Quiz') %}
+        <h2>Start Game!</h2>
+
+        <section id="games">
+            <!-- When pressed, gameContainer will be reviled and timmer will start -->
+            <button onclick="showDiv()" id="startButton">start</button>
+
+            <div id="gameContainer">
+                <div class="container">
+                    <!-- Print the question you're on -->
+                    <p id="questionNumber"></p>
+
+                    <div id="question0">
+                        <p>what is the proper code to import random</p>
+                    </div>
+
+                    <div id="question1">
+                        <p>what is the proper order for the code missing?</p>
+                        {% call utils.code('python') %}
+                          #random number between 0 and 10
+                          import random*
+                          # CODE GOES Here
+                          print(r_int)
+                        {% endcall %}
+                    </div>
+
+                    <div id="question2">
+                        <p>
+                            Unscramble this line of code. The result should finish
+                            a program to guess the user’s age.
+                        </p>
+                        {% call utils.code('python') %}
+                            >>> age = 22
+                            >>> print('Guess my age!')
+                            >>> guess = int(input('Guess: '))
+                            >>> # Your code goes here
+                            ...     print('Good job!')
+                        {% endcall %}
+
+                        <p>Put these in order to create correct code.</p>
+                    </div>
+
+                        <p>What is printed?</p>
+                    </div>
+
+                    <div id="move">
+                        <section class="drag-vehicle">
+                            <ul class="carts">
+                                <li>
+                                    <img id="train" alt="train head" src="{{ url_for('static', filename='img1/temp1.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train1" alt="train body" src="{{ url_for('static', filename='img1/temp2.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train2" alt="train body" src="{{ url_for('static', filename='img1/temp3.jpg')}}">
+                                </li>
+                                <li>
+                                    <img id="train3" alt="train tail" src="{{ url_for('static', filename='img1/temp4.jpg')}}">
+                                </li>
+                            </ul>
+                        </section>
+
+                        <div class="drop-boxs">
+                            <section class="drop-zone1"></section>
+                            <section class="drop-zone2"></section>
+                            <section class="drop-zone3"></section>
+                            <section class="drop-zone4"></section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- reset question button -->
+                <button onclick="reset()" id="resetButton">reset</button>
+
+                <!-- next question button -->
+                <button onclick="next()" id="nextButton">next</button>
+
+                <!-- print for score and time -->
+                <p id="score"></p>
+                <p id="compare"></p>
+            </div>
+        </section>
     {% endcall %}
 
 {% endblock %}
@@ -83,6 +169,6 @@
 {% block scripts %}
     {{ super() }}
 
-    <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/assignments/dragNdrop0.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
 {% endblock %}
