@@ -185,6 +185,9 @@ function tick() {
       score = 100
 
     }
+    if (score<0){
+      score =0;
+    }
     $.post('../submit_score', {
         'name': name,
         'quiz': 2,
