@@ -25,7 +25,9 @@
 
     <div class="container-fluid">
         {% block sections %}{% endblock %}
+        {% if next_lesson() != 8 %}
         <a class="button" href="{{ url_for('assignment_page', n=next_lesson()) }}" >Next lesson</a>
+        {% endif %}
     </div>
 
     <footer class="container-fluid">

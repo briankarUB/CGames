@@ -26,15 +26,14 @@ function stopCount() {
 
 function showDiv() {
   document.getElementById('gameContainer').style.display = "block";
-  document.getElementById("gameContainer").scrollIntoView({ block: 'end', behavior: 'smooth'});
-
+  document.getElementById('gameContainer').scrollIntoView({ block: 'end', behavior: 'smooth'});
   document.getElementById('startButton').style.display = "none";
   startCount();
   choosePic();
 }
 
 
-var qfolder = ["q1", "q2", "q3", "q4", "q5", "q6"];
+var qfolder = ["q1", "q2", "q3"];
 
 var qCount = 0; // count of current question
 var html; // html to save the current state of the game
@@ -43,16 +42,16 @@ html = document.getElementById('gameContainer').innerHTML;
 // pick a ramdom img for vehicles
 function choosePic() {
 
-  if (qCount < 6){
+  if (qCount < 4){
   document.getElementById("question" + qCount).style.display = "block";
   }
 
   //Print the question you're on
-  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 6";
+  document.getElementById("questionNumber").innerHTML = "Train " + (qCount + 1) + " out of 3";
 
   //go through different question by folder when ever user clicks next
   var folderName = qfolder[qCount];
-  var myPix = new Array("../static/img/" + folderName + "/1.jpg", "../static/img/" + folderName + "/2.jpg", "../static/img/" + folderName + "/3.jpg", "../static/img/" + folderName + "/4.jpg");
+  var myPix = new Array("../static/img1/" + folderName + "/1.jpg", "../static/img1/" + folderName + "/2.jpg", "../static/img1/" + folderName + "/3.jpg", "../static/img1/" + folderName + "/4.jpg");
 
 
   var randomNum = Math.floor(Math.random() * myPix.length); // find radom index from image arr
@@ -127,9 +126,8 @@ function next() {
         + '<a href="../leaderboard">Leaderboard</a>';
 
         var name = prompt('What is your name?');
-        //this calculation sets the score from the timer with under 50 seconds being a 100%
-
-        var score = Math.floor(-(1/2)*end_time +125)
+        //this calculation sets the score from the timer with under 30 seconds being a 100%
+        var score = Math.floor(-(1/2)*end_time +110)
         if (score>100) {
           score = 100
 
@@ -140,8 +138,9 @@ function next() {
 
         $.post('../submit_score', {
             'name': name,
-            'quiz': 2,
+            'quiz': 4,
             'score': score
+            // this multiplier is Incomplete
         });
       }
     } else {

@@ -4,15 +4,28 @@
     <div class="jumbotron">
         <h1 class="text-center display-4">Welcome to CGames</h1>
         <p class="lead text-center">
-            A place to learn how to code Python that feels like playing a game.
+            A place to learn how to code Python with activities that reinforce concepts
         </p>
         <hr class="my-4 text-center">
         <div class="container">
           <div class="row">
             <div class="col-lg-10 mx-auto">
               <p class="m-10">
-                  <a href="{{ url_for('assignment_page', n=1) }}" class="btn btn-primary" role="button">Get started</a>
-                  <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
+                 <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                        Get Started
+                    </button>
+                    <div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=2) }}">Lists</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=3) }}">Loops</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=4) }}">Random Numbers</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=5) }}">Read And Write</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=6) }}">Functions</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=7) }}">Classes</a>
+                    </div>
+                <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
+                </div>
               </p>
             </div>
           </div>
@@ -23,9 +36,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>Beta Release</h2>
+            <h2>Official Release</h2>
             <p>
-              CGames is now in beta!! Help us out by submitting any issues
+              CGames is now official!! Help us out by submitting any issues
               to our github issues page here!
             </p>
             <p>
@@ -73,7 +86,7 @@
           <div class="col-lg-10 mx-auto">
             <h2>How We Teach It</h2>
             <p>
-              CGames teaches using short lessons. At the end of each lesson, activities are used to reinforce the
+              CGames teaches using short lessons. At the end of some lessons, activities are used to reinforce the
               lessons in a fun, challenging way.
             </p>
           </div>
@@ -88,9 +101,9 @@
               <p>
                 CGames uses the same information that most python
                 tutorials have, so why should a user choose to learn from our service? First, we
-                believe that short lessons are key to make users feel acomplished.
-                Then, paired with fun activities, the user can truly understand
-                what their code does. The Leaderboard allows the users to see how his/her progress
+                believe that short lessons are key to make users feel accomplished.
+                Then, paired with activities, the user can truly understand
+                how python works. The Leaderboard allows the users to see how his/her progress
                 compares to other users, adding an extra competitive edge.
               </p>
               <br>
@@ -132,9 +145,8 @@
         <p>
           <a href="https://gitter.im/CGames_CSE442/Lobby"  role="button">Chat On Gitter</a>
         </p>
+      </div>
 
       <!-- /.container -->
     </footer>
-
-
 {% endblock %}
