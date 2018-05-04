@@ -180,11 +180,13 @@ function tick() {
 
     var name = prompt('You finished them all! What is your name?');
     //this calculation sets the score from the timer with under 30 seconds being a 100%
-    var timelimit = 300
-    var score = Math.floor(timelimit /end_time)*10
+    var score = Math.floor(-(1/2)*end_time +1000)
     if (score>100) {
       score = 100
 
+    }
+    if (score<0){
+      score =0;
     }
     $.post('../submit_score', {
         'name': name,
