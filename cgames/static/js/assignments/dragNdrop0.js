@@ -127,8 +127,7 @@ function next() {
 
         var name = prompt('What is your name?');
         //this calculation sets the score from the timer with under 30 seconds being a 100%
-        var timelimit = 300
-        var score = Math.floor(timelimit /end_time)*10
+        var score = Math.floor(-(1/2)*end_time +110)
         if (score>100) {
           score = 100
 

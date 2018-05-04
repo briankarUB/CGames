@@ -26,7 +26,7 @@ function stopCount() {
 
 function showDiv() {
    document.getElementById('showQuestions').style.display = "block";
-   document.getElementById("showQuestions").scrollIntoView({ block: 'end', behavior: 'smooth'});
+   //document.getElementById("showQuestions").scrollIntoView({ block: 'end', behavior: 'smooth'});
 
    startCount();
 }
@@ -127,11 +127,22 @@ else {
     }
 
     var name = prompt('What is your name?');
-
+    var tt = Math.ceil(-(1/2)*end_time +110);
+    var score = 0;
+    if (points*10 === 100){
+      score = Math.floor(((points *10) + tt)/2);
+    }
+    else {
+      score = points;
+    }
+    score = Math.floor(((points *10) + tt)/2);
+    if (score>100){
+      score = 100;
+    }
     $.post('../submit_score', {
         'name': name,
         'quiz': 1,
-        'score': points * 10
+        'score': score
     });
 }
     });

@@ -127,9 +127,9 @@ function next() {
         + '<a href="../leaderboard">Leaderboard</a>';
 
         var name = prompt('What is your name?');
-        //this calculation sets the score from the timer with under 30 seconds being a 100%
-        var timelimit = 300
-        var score = Math.floor(timelimit /end_time)*10
+        //this calculation sets the score from the timer with under 50 seconds being a 100%
+
+        var score = Math.floor(-(1/2)*end_time +125)
         if (score>100) {
           score = 100
 
@@ -138,7 +138,6 @@ function next() {
             'name': name,
             'quiz': 2,
             'score': score
-            // this multiplier is Incomplete
         });
       }
     } else {
