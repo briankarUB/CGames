@@ -141,6 +141,8 @@
     {% call section('Trains') %}
         <div id="games">
             <h2>Start Game!</h2>
+            <h3>Instructions</h3>
+            <p>Once you press start you will have to use your knowledge of loops which you have learned from this lesson to determine the print order of the set of numbers within the different loops. Similar to the original snake game, use the up down right and left arrow keys to snatch up the correct int printed from he given code. Remember, once you run in to the wall or yourself its game over. Good luck!</p>
             <button onclick="showDiv()" id="startButton">start</button>
             <div id="gameContainer">
                 <div>
@@ -158,8 +160,8 @@
 
                 <div id="q2">
                     {% call utils.code('python') %}
-                        >>> for i in range(7):
-                        ...     for j in range(6):
+                        >>> for i in range(7,0,-1):
+                        ...     for j in range(0,6):
                         ...         x = (2 * i) + (3 * j)
                         ...         print(x)
                     {% endcall %}
@@ -171,10 +173,10 @@
                         >>> j = 0
                         >>> while i < 20:
                         ...     while j < 13:
-                        ...         x = ((i * i) + 3) - j
+                        ...         x = i + j
                         ...         print(x)
-                        ...         j = j + 1
-                        ...         i = i - 4
+                        ...         j = j + 2
+                        ...     i = i + 2
                     {% endcall %}
                 </div>
 

@@ -31,7 +31,6 @@ var ans = [];
 var a = 0;
 while(a < 20){
   ans.push(a);
-  console.log(a);
   a = a + 2;
 }
 
@@ -40,18 +39,22 @@ for (var n = 7; n > 0; n--) {
   for (var m = 0; m < 6; m++) {
     var x = n * 2 + m * 3;
     ans1.push(x);
-    console.log(x);
   }
 }
 
 var ans2 = [];
-for (var n = 1; n < 20; n = n - 4){
-  for (var i = 0; i < 13; i++) {
-      var x = (n + n)+3
-      var x1 = x - i;
-      ans2.push(x1);
+var i = 0;
+var j = 0;
+while(i < 20){
+  while(j < 13){
+    var x = i + j;
+    ans2.push(x);
+    console.log(x);
+    j = j + 2;
+
   }
-  n = n + 6;
+  i = i + 2;
+
 }
 
 // test cases
@@ -180,7 +183,7 @@ function tick() {
 
     var name = prompt('You finished them all! What is your name?');
     //this calculation sets the score from the timer with under 30 seconds being a 100%
-    var score = Math.floor(-(1/2)*end_time +1000)
+    var score = Math.floor(-(1/2)*end_time +190)
     if (score>100) {
       score = 100
 
