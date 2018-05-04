@@ -14,8 +14,6 @@
     <option name="SCRIPT_NAME" value="setup.py" />
     <option name="PARAMETERS" value="test" />
     <option name="SHOW_COMMAND_LINE" value="false" />
-    <option name="EMULATE_TERMINAL" value="false" />
-    <option name="MODULE_MODE" value="false" />
     <method />
   </configuration>
 </component>

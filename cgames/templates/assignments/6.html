@@ -1,0 +1,123 @@
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 6{% endblock %}
+{% block lesson_title %}Lesson 6{% endblock %}
+{% block sections %}
+    {% call section('funct','Functions') %}
+        <h2>Functions</h2>
+        <p>
+            In Python, we use functions to reuse code throughout a program.
+            Without functions, a program could contain hundreds of lines of
+            redundant and messy code. Python itself comes with built in functions
+            such as <code> print()</code> that are predefined, but we can also
+            create our own functions. In order to create a user-defined function
+            we start with the keyword <code>def</code> followed by the name of
+            the function <code>myfunction</code> and parenthesis <code>()</code>.
+
+            For example, lets define a function that adds two number held within a variable
+            {% call utils.code('python') %}
+                def myfunction():
+                    i = 2 + 2
+                    print(i)
+
+            >>> myfunction()
+            {% endcall %}
+
+            When we call <code>myfunction</code>, the answer of 4 will be printed. However,
+            this function is very limited because the value of i cannot change, so the function
+            is only useful when the user needs the number 4 within their program. In order
+            to make our function more flexible, let's introduce parameters.
+        </p>
+    {% endcall %}
+
+    {% call section('param', 'Parameters') %}
+        <h2>Parameters</h2>
+        <p>
+            In Python, parameters (also called arguments) are used when you want the
+            user to be able to pass in values or objects into a function. If we want
+            our new function to add any numbers we specify, we should also add a return
+            value. A function can return any Python type, which would allow us to use that
+            value later on in a program.
+
+            For the next example, lets define a function addfunction that add two user generated
+            numbers and stores them in a third variable that we can use later on.
+
+            {% call utils.code('python') %}
+                def addfunction(a,b):
+                    c = a + b
+                    return c
+
+            >>> addfunction(3,5)
+            >>> c = c + 2
+            >>> print(C)
+            {% endcall %}
+
+            When we call <code>print(c)</code>, the program will output the number 10.
+            This is because our <code>addfunction</code> updated the variable c with the
+            value of 3 + 5, and then we added 2 to c to get the final output of 10. By
+            retrurning the value c, we can use that variable anywhere else in our program
+            that we might need two numbers added together.
+        </p>
+    {% endcall %}
+
+    {% call section('adv', 'Advanced Examples') %}
+        <h2>Advanced Examples</h2>
+        <p>
+            For our last few examples, let's incorporate some of the concepts you have learned
+            in previous lessons into functions. One commmon component of user defined functions is <code>If</code>
+            statements.
+
+            Let's define a function that determines whether a user inputted number is even or odd
+
+            {% call utils.code('python') %}
+                def evenodd(input):
+                    if (input % 2) == 0:
+                        print("Even")
+                    else:
+                        print("Odd")
+
+            >>> evenodd(6)
+            {% endcall %}
+
+            The program would output <code>Even</code> because 6 % 2 has a remainder of 0, as you learned
+            from the numbers section of Lesson 1. It is also important to point out that not every function
+            that takes in parameters needs to return something. Any function that isn't defined to return
+            anything will simply return <code>None</code>, which has no effect on the code.
+        </p>
+
+        <p>
+            In our next example, we will define a function that uses loops and if statements
+            to determine the factorial of a number.
+
+            {% call utils.code('python') %}
+                def fact(n):
+                numfact = 1
+                    if n < 0:
+                        print("Factorial does not exist")
+                    elif n ==0:
+                        print("Factorial of 0 is 1")
+                    else:
+                        for i in range(1, n +1):
+                            numfact = numfact * i
+                    print("The factorial of",n,"is",numfact)
+
+            >>> fact(3)
+            {% endcall %}
+
+            The output of the program would be "The factorial of 3 is 6" because since the value
+            of n is inputted as 6, the else statement will be executed and the for loop is used to
+            calculate the factorial. When defining functions, it is good practice to think about
+            "edge cases" or situations where either only one answer exists or you need a different way
+            to calculate the answer. In this example the edge cases are when the input is negative or a
+            0. Negative numbers do not have factorial values and the factorial of 0 is always 1, so we
+            can save some time within the function and make it more efficient.
+        </p>
+    {% endcall %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+
+    <script src="{{ url_for('static', filename='js/assignments/dragNdrop.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style2.css') }}">
+{% endblock %}
