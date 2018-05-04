@@ -13,9 +13,9 @@
           random number. More info can be found <a href="https://docs.python.org/3/library/random.html">here.</a>
         </p>
         <p>
-          In Python, they way to access code from other files is to use import.
+          In Python, the way to access code from other files is to use import.
           {% call utils.code('python') %}
-              import random*
+              from random import *
           {% endcall %}
 
           This code imports every function from the random file in python.<br>
@@ -24,7 +24,7 @@
           a (pseudo) random number between 0 and 1 can be generated with:
 
           {% call utils.code('python') %}
-              import random*
+              from random import *
               print(random())
           {% endcall %}
         </p>
@@ -34,18 +34,18 @@
     {% call section('int', 'Random Ints') %}
         <h2>Random Ints</h2>
         <p>
-          To generate a whole number between 1 and 100 use:
+          To generate and print a whole number between 1 and 100 use:
             {% call utils.code('python') %}
-            import random*
+            from random import *
 
             print(randint(1,100))
             {% endcall %}
 
-            This will print a random integer. If you want to store it in a variable you can use:
+            If you want to store the random number in a variable you can use:
             {% call utils.code('python') %}
-            import random*
+            from random import *
 
-            x =randint(1,100)
+            x = randint(1,100)
             {% endcall %}
         </p>
     {% endcall %}
@@ -72,9 +72,6 @@
 
           print(sample(items,4)) #prints four random numbers from items
           {% endcall %}
-
-          <h1>the game here could easlily be the train game</h1>
-
         </p>
 
     {% endcall %}
@@ -95,11 +92,11 @@
                     <p id="questionNumber"></p>
 
                     <div id="question0">
-                        <p>what is the proper code to import random</p>
+                        <p>What is the proper code to import random?</p>
                     </div>
 
                     <div id="question1">
-                        <p>What is the proper order for the code missing?</p>
+                        <p>What is the proper order for the missing code?</p>
                         {% call utils.code('python') %}
                           #random number between 0 and 10
                           import random*
@@ -109,7 +106,6 @@
                     </div>
 
                     <div id="question2">
-                        <p>What is the proper order for the code missing?</p>
                         {% call utils.code('python') %}
                         #select 8 random numbers from the list
                         items = []
