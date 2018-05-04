@@ -16,11 +16,11 @@
 
             For example, lets define a function that adds two number held within a variable
             {% call utils.code('python') %}
-                def myfunction():
-                    i = 2 + 2
-                    print(i)
+            def myfunction():
+                i = 2 + 2
+                print(i)
 
-            >>> myfunction()
+            myfunction()
             {% endcall %}
 
             When we call <code>myfunction</code>, the answer of 4 will be printed. However,
@@ -43,13 +43,13 @@
             numbers and stores them in a third variable that we can use later on.
 
             {% call utils.code('python') %}
-                def addfunction(a,b):
-                    c = a + b
-                    return c
+            def addfunction(a,b):
+                c = a + b
+                return c
 
-            >>> addfunction(3,5)
-            >>> c = c + 2
-            >>> print(C)
+            addfunction(3,5)
+            c = c + 2
+            print(C)
             {% endcall %}
 
             When we call <code>print(c)</code>, the program will output the number 10.
@@ -70,13 +70,13 @@
             Let's define a function that determines whether a user inputted number is even or odd
 
             {% call utils.code('python') %}
-                def evenodd(input):
-                    if (input % 2) == 0:
-                        print("Even")
-                    else:
-                        print("Odd")
+            def evenodd(input):
+                if (input % 2) == 0:
+                    print("Even")
+                else:
+                    print("Odd")
 
-            >>> evenodd(6)
+            evenodd(6)
             {% endcall %}
 
             The program would output <code>Even</code> because 6 % 2 has a remainder of 0, as you learned
@@ -90,18 +90,18 @@
             to determine the factorial of a number.
 
             {% call utils.code('python') %}
-                def fact(n):
-                numfact = 1
-                    if n < 0:
-                        print("Factorial does not exist")
-                    elif n ==0:
-                        print("Factorial of 0 is 1")
-                    else:
-                        for i in range(1, n +1):
-                            numfact = numfact * i
-                    print("The factorial of",n,"is",numfact)
+            def fact(n):
+            numfact = 1
+                if n < 0:
+                    print("Factorial does not exist")
+                elif n ==0:
+                    print("Factorial of 0 is 1")
+                else:
+                    for i in range(1, n +1):
+                        numfact = numfact * i
+                print("The factorial of",n,"is",numfact)
 
-            >>> fact(3)
+            fact(3)
             {% endcall %}
 
             The output of the program would be "The factorial of 3 is 6" because since the value

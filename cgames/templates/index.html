@@ -16,9 +16,13 @@
                         Get Started
                     </button>
                     <div class= "dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
-                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=2) }}">Lists</a>
-                        <a class = "dropdown-item" href="{{ url_for('assignment_page', n=3) }}">Loops</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=1) }}">Variables and Types</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=2) }}">Lists</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=3) }}">Loops</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=4) }}">Random Numbers</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=5) }}">Read And Write</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=6) }}">Functions</a>
+                      <a class = "dropdown-item" href="{{ url_for('assignment_page', n=7) }}">Classes</a>
                     </div>
                 <a href="{{ url_for('leaderboard') }}" class="btn btn-success" role="button">Leaderboard</a>
                 </div>
@@ -32,9 +36,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-10 mx-auto">
-            <h2>Beta Release</h2>
+            <h2>Official Release</h2>
             <p>
-              CGames is now in beta!! Help us out by submitting any issues
+              CGames is now official!! Help us out by submitting any issues
               to our github issues page here!
             </p>
             <p>
@@ -146,5 +150,3 @@
       <!-- /.container -->
     </footer>
 {% endblock %}
-
-
