@@ -26,6 +26,8 @@ function stopCount() {
 
 function showDiv() {
    document.getElementById('showQuestions').style.display = "block";
+   document.getElementById("showQuestions").scrollIntoView({ block: 'end', behavior: 'smooth'});
+
    startCount();
 }
 

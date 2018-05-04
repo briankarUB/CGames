@@ -26,7 +26,7 @@ function stopCount() {
 
 function showDiv() {
   document.getElementById('gameContainer').style.display = "block";
-
+  document.getElementById('gameContainer').scrollIntoView({ block: 'end', behavior: 'smooth'});
   document.getElementById('startButton').style.display = "none";
   startCount();
   choosePic();
