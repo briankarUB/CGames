@@ -3,9 +3,9 @@
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
-      <env name="PYTHONUNBUFFERED" value="1" />
       <env name="FLASK_APP" value="cgames/app.py" />
       <env name="FLASK_DEBUG" value="0" />
+      <env name="PYTHONUNBUFFERED" value="1" />
     </envs>
     <option name="SDK_HOME" value="" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -17,6 +17,8 @@
     <option name="SCRIPT_NAME" value="flask" />
     <option name="PARAMETERS" value="run" />
     <option name="SHOW_COMMAND_LINE" value="false" />
+    <option name="EMULATE_TERMINAL" value="false" />
+    <option name="MODULE_MODE" value="true" />
     <method />
   </configuration>
 </component>
