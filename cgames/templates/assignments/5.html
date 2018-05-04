@@ -39,8 +39,8 @@
         </p>
         <p>
           While the codes above work, we should always test if the file we want
-          to open exists.  We will test first if the file does not exist, if it
-          does it will read the file else return an error. As in the code below:
+          to open exists.  We will test first to check if the file exists. If it
+          does it, this will read the file. Else, this will return an error. As in the code below:
           {% call utils.code('python') %}
           import os.path
 
@@ -88,7 +88,7 @@
 
             {% endcall %}
             The ‘w’ flag makes Python truncate the file if it already exists.
-            That is to say, if the file contents exists it will be replaced.
+            That is to say, if the file content exists, it will be replaced.
 
         </p>
         <h3>Append File</h3>
@@ -149,7 +149,6 @@
         </tr>
       </table>
     </p>
-    <h1> not sure what game here</h1>
 
 
     {% endcall %}
