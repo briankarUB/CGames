@@ -3,13 +3,10 @@
 [![Requires.io](https://img.shields.io/requires/github/briankarUB/CGames/develop.svg)](https://requires.io/github/briankarUB/CGames/requirements/?branch=develop)
 [![Gitter](https://img.shields.io/gitter/room/CGames_CSE442/Lobby.svg)](https://gitter.im/CGames_CSE442/Lobby)  
 CSE 442 project for Spring 2018.
-## Beta Release Link
+## Official Release Link
 https://cgames-cse442.herokuapp.com/
-## Beta Video Link
-https://youtu.be/AgTihH1utQI
-
-## Prototype link
-https://www.youtube.com/watch?v=gKoA1O_O3Zs
+## Official Video Link
+https://youtu.be/siWdFWTwJUw
 
 ## Summary
 
@@ -33,11 +30,11 @@ languages could be added to the web app later.
 
 ## Get started
 ### Python setup
-CGames requires Python 3.5+ to run. Head to the 
+CGames requires Python 3.5+ to run. Head to the
 [Python website](https://www.python.org/downloads/) to install it before
 moving on to the next step. It's recommended that you add Python to your
-PATH so that the `python` interpreter can be seamlessly called from any 
-terminal window. 
+PATH so that the `python` interpreter can be seamlessly called from any
+terminal window.
 
 ### CGames setup
 To jump right into development, clone the project and run either `run.bat` or
