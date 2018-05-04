@@ -1,231 +1,195 @@
-{% extends "layout/default.html" %}
-{% block title %}Assignments{% endblock %}
-{% block navbar_items %}
-<div class="collapse navbar-collapse" id="navbarResponsive">
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#loops">Loops</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#for_loops">For Loop</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#while_loops">While Loop</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#nested_loops">Nested Loop</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#python_range">Python Range</a>
-    </li>
-  </ul>
-</div>
+{% extends "layout/lesson.html" %}
+{% import "layout/utils.html" as utils %}
+{% block title %}Lesson 3{% endblock %}
+{% block lesson_title %}Lesson 3{% endblock %}
+{% block sections %}
+    {% call section('loops', 'Loops') %}
+        <h2>Loops</h2>
+        <p>
+            Code can be repeated using a loop. Lines of code can be repeated
+            N times, where N is manually configurable. In practice, it means
+            code will be repeated until a condition is met. This condition is
+            usually (x >=N) but it’s not the only possible condition.
+        </p>
+        <p>
+            Python has 2 types of loops: for loops and while loops.
+        </p>
+    {% endcall %}
 
-{% endblock %}
-{% block content %}
-<header class="bg-secondary text-white" id="loops">
-  <div class="container text-center p-3">
-    <br>
-  </div>
-</header>
+    {% call section('for', 'For loops') %}
+        <h2>For loops</h2>
+        <p>
+            We can iterate through a list using a for loop, using the
+            <code>for</code> keyword:
 
-    <header class="bg-secondary text-white">
-      <div class="container text-center p-3">
-        <h1>Assignment 3</h1>
-        <p class="lead">Learn Python!</p>
-      </div>
-    </header>
+            {% call utils.code('python') %}
+                >>> items = ['Abby', 'Brenda', 'Cindy', 'Diddy']
+                >>> for item in items:
+                ...     print(item)
+                Abby
+                Brenda
+                Cindy
+                Diddy
+            {% endcall %}
+        </p>
+        <p>
+            A for loop can be used to repeat a certain block
+            of code N times. In this example, <code>N = 4</code>.
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Loops</h2>
-            <p>
-              Code can be repeated using a loop. Lines of code can be repeated N times, where N is manually configurable. In practice, it means code will be repeated until a condition is met. This condition is usually (x >=N) but it’s not the only possible condition.<br>
-              Python has 3 types of loops: for loops, while loops and nested loops.
-            </p>
-          </div>
+            {% call utils.code('python') %}
+                >>> for i in range(4):
+                ...     print(i)
+                0
+                1
+                2
+                3
+            {% endcall %}
+
+            What's that <code>range(4)</code> call? We'll see below!
+        </p>
+    {% endcall %}
+
+    {% call section('range', 'range() function') %}
+        <h2>range() function</h2>
+        <p>
+            The <code>range()</code> function lets us iterate through a range
+            of numbers in an efficient way.
+        </p>
+        <p>
+            At its most basic, we can iterate a range of non-negative
+            numbers on the half-open range <code>[0, n)</code>:
+
+            {% call utils.code('python') %}
+                >>> n = 4
+                >>> for i in range(n):  # 0 (inclusive) to 4 (exclusive)
+                ...     print(i)
+                0
+                1
+                2
+                3
+            {% endcall %}
+        </p>
+        <p>
+            We can choose the start point explicitly, if desired. This will
+            iterate through the half-open range <code>[m, n)</code>:
+
+            {% call utils.code('python') %}
+                >>> m, n = 2, 5
+                >>> for i in range(m, n):  # [2, 5)
+                ...     print(i)
+                2
+                3
+                4
+            {% endcall %}
+        </p>
+        <p>
+            Finally, we can choose the step size so that, for example, we
+            iterate through the range <code>[m, n)</code> in step sizes
+            of <code>s</code>:
+
+            {% call utils.code('python') %}
+                >>> m, n, s = 4, 21, 8
+                >>> for i in range(m, n, s):  # [4, 21) in steps of 8
+                ...     print(i)
+                4
+                12
+                20
+            {% endcall %}
+        </p>
+    {% endcall %}
+
+    {% call section('while', 'While loops') %}
+        <h2>While loops</h2>
+        <p>
+            When you want to repeat some code as long as a boolean condition
+            is true, you can use a while loop instead. For example:
+
+            {% call utils.code('python') %}
+                >>> guess = 0
+                >>> while guess != 5:
+                ...     guess = int(input('Guess the number: '))
+                ...
+                ... print('That was the right number!')
+            {% endcall %}
+        </p>
+    {% endcall %}
+
+    {% call section('nested', 'Nested loops') %}
+        <h2>Nested loops</h2>
+        <p>
+            We can combine loops using a concept called "nesting." Since loops
+            are just code themselves, we can put them inside other loops.
+        </p>
+        <p>
+            For example, here's how we might iterate through a 3-by-2
+            2D matrix:
+
+            {% call utils.code('python') %}
+                >>> for row in range(3):
+                ...     for col in range(2):
+                ...         # Do something with M[row][col]
+            {% endcall %}
+        </p>
+        <p>
+            Nested loops can be very useful, but remember that it makes your
+            code more complex and can slow your program down if used
+            without a good reason. Think about whether your problem requires
+            nesting before using it.
+        </p>
+    {% endcall %}
+
+    {% call section('Trains') %}
+        <div id="games">
+            <h2>Start Game!</h2>
+            <h3>Instructions</h3>
+            <p>Once you press start you will have to use your knowledge of loops which you have learned from this lesson to determine the print order of the set of numbers within the different loops. Similar to the original snake game, use the up down right and left arrow keys to snatch up the correct int printed from he given code. Remember, once you run in to the wall or yourself its game over. Good luck!</p>
+            <button onclick="showDiv()" id="startButton">start</button>
+            <div id="gameContainer">
+                <div>
+                    Time: <span id="timerDisplay">0</span>s
+                </div>
+
+                <div id="q1">
+                    {% call utils.code('python') %}
+                        >>> a = 0
+                        >>> while a < 20:
+                        ...     print(a)
+                        ...     a = a + 2
+                    {% endcall %}
+                </div>
+
+                <div id="q2">
+                    {% call utils.code('python') %}
+                        >>> for i in range(7,0,-1):
+                        ...     for j in range(0,6):
+                        ...         x = (2 * i) + (3 * j)
+                        ...         print(x)
+                    {% endcall %}
+                </div>
+
+                <div id="q3">
+                    {% call utils.code('python') %}
+                        >>> i = 0
+                        >>> j = 0
+                        >>> while i < 20:
+                        ...     while j < 13:
+                        ...         x = i + j
+                        ...         print(x)
+                        ...         j = j + 2
+                        ...     i = i + 2
+                    {% endcall %}
+                </div>
+
+                <canvas id='c'></canvas>
+
+                <button onclick="reset()" id="resetButton">reset</button>
+                <p id="moveON">Congrats you finished the round! Click next to move on...</p>
+                <button onclick="next()" id="nextButton">next</button>
+                <p id="compare"></p>
+                <p id="score"></p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <section id="for_loops" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>For Loops</h2>
-            <p>
-                We can iterate a list using a for loop
-            </p>
-              <pre><code class="python">
-                items = [ "Abby","Brenda","Cindy","Diddy" ]<br>
-                for item in items:
-                        print(item)<br>
-              </code></pre>
-            <p>
-                Visualization of for loop:
-            </p>
-            <a href="https://pythonspot-9329.kxcdn.com/wp-content/uploads/2016/03/for-loop-animation.gif"><img src="https://pythonspot-9329.kxcdn.com/wp-content/uploads/2016/03/for-loop-animation.gif" alt="for loop" width="850" height="120" style="border:1px solid black;" class="size-full wp-image-4948"></a>
-            <p>
-              <br>
-              The for loop can be used to repeat N times too:
-            </p>
-            <pre><code class="python">
-              for i in range(1,10):
-                      int(i)
-              </code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="while_loops">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>While Loop</h2>
-            <p >
-              If you are unsure how many times a code should be repeated, use a while loop.<br>
-              For example,
-            </p>
-            <pre><code class="python">
-              correctNumber = 5
-              guess = 0
-
-              while guess != correctNumber:
-                  guess = int(input("Guess the number: "))
-
-                  if guess != correctNumber:
-                      print('False guess')
-
-              print('You guessed the correct number')
-              </code></pre>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="nested_loops">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Nested Loop</h2>
-            <p>
-              We can combine for loops using nesting. If we want to iterate over an (x,y) field we could use:
-            </p>
-            <pre><code class="python">
-              for x in range(1,10):
-                  for y in range(1,10):
-                      print("(" + str(x) + "," + str(y) + ")")
-            </code></pre>
-            <p>
-              <br>Nesting is very useful, but it increases complexity the deeper you nest.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="python_range">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Python range</h2>
-            <p>
-              The <b>range()</b> function returns of generates a sequence of numbers, starting from the lower bound to the upper bound.
-            </p>
-            <pre><code class="python">
-              range(lower_bound, upper_bound, step_size)
-            </code></pre>
-            <p>
-              <li>lower_bound: <i>The starting value of the list.</i></li>
-              <li>upper_bound:<i> The max value of the list, excluding this number.</i></li>
-              <li>step_bound:<i> The step size, the difference between each number in the list.</i></li>
-              <br>The lower_bound and step_size parameters are optional. By default the lower bound is set to zero, the incremental step is set to one. The parameters must be of the type integers, but may be negative.<br>
-            </p>
-            <img src="https://pythonspot-9329.kxcdn.com/wp-content/uploads/2017/04/python-range.png.webp" alt="python range" width="461" height="267" class="size-full wp-image-6464" srcset="https://pythonspot-9329.kxcdn.com/wp-content/uploads/2017/04/python-range.png.webp 461w, https://pythonspot-9329.kxcdn.com/wp-content/uploads/2017/04/python-range-300x174.png.webp 300w" sizes="(max-width: 461px) 100vw, 461px">
-            <figcaption class="wp-caption-text">The python range function in  the interpreter</figcaption>
-
-            <p>
-              <b>Range implementation difference</b>
-              <br>
-              This distinction won’t usually be an issue. The range() is implemented slightly different in the Python versions:
-              <li>Python 2.x: <i>The range() function returns a list.</i></li>
-              <li>Python 3.x: <i>The range() function generates a sequence.</i></li>
-              <br>
-              <b>Range in python 2.7</b>
-              <br>
-              A call to range(5) will return: 0,1,2,3,4.
-              <pre><code class="python">
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <div id="games">
-      <h2>Start Game!</h2>
-      <p>Put instructions for game here</p>
-      <button onclick="showDiv()" id ="startButton">start</button>
-      <div id="gameContainer">
-          <div>
-            Time: <span id="timerDisplay">0</span>s
-        </div>
-        <div id="q1">
-            <pre><code class="python">
-            a = 0
-            while(a < 20):
-              print(a)
-              a = a + 2
-            </code></pre>
-        </div>
-        <div id="q2">
-          <pre><code class="python">
-          for i in range(0,7):
-            for j in range(0,6):
-              x = i * 2 + j * 3
-              print(x)
-          </code></pre>
-        </div>
-        <div id="q3">
-          <pre><code class="python">
-          i = 0
-          j = 0
-          while(i < 20):
-            while(j < 13)
-              x = ((i + i) + 3) - j
-              print(x)
-              j = j + 1
-            i = i - 4
-          </code></pre>
-        </div>
-
-        <canvas id='c'></canvas>
-
-        <button onclick="reset()" id ="resetButton">reset</button>
-        <p id="moveON">Congrats you finished the round! Click next to move on...</p>
-        <button onclick="next()" id ="nextButton">next</button>
-        <p id="compare"></p>
-        <p id="score"></p>
-      </div>
-    </div>
-
-
-
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; CGames 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-
+    {% endcall %}
 
 {% endblock %}
 
